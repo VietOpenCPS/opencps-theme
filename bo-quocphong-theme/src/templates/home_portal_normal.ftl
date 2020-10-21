@@ -12,17 +12,17 @@
 	
 	<link rel="Shortcut Icon" href="${themeDisplay.getPathThemeRoot()}/images/favicon.ico">
 	
-	<link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&display=swap&subset=vietnamese" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Lato&family=Noto+Serif:wght@700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
 	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=123456789" rel="stylesheet">
 
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=12345" rel="stylesheet" type="text/css">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=12345" rel="stylesheet" type="text/css">
+	<!-- <link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8888" rel="stylesheet" type="text/css"> -->
+	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=666" rel="stylesheet" type="text/css">
 	
 	<script>
         window.__define = window.define;
@@ -33,6 +33,7 @@
 	
 	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/slick.min.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/vgcaplugin.js"></script>
 	
 	<script>
         window.define = window.__define;
@@ -61,25 +62,34 @@
 	</#if>
 
 	<div class="" id="wrapper">
-		<header id="banner" class="container">
-			<div class="logo-wrapper">
-				<a href="/">
-					<img src="${themeDisplay.getPathThemeRoot()}/images/logo-dvc.png">
-				</a>		
-				<div id="react-root" style="">
-					<div id="app_login"></div>
+		<header id="banner">
+			<div class="container">
+				<div class="logo-wrapper">
+					<a href="/" class="mLogo">
+						<img src="${themeDisplay.getPathThemeRoot()}/images/logo.png">
+						<span>
+							<label>Bộ Quốc Phòng</label>
+							Cổng dịch vụ công trực tuyến
+						</span>
+					</a>		
+					<div id="react-root" style="">
+						<div id="app_login"></div>
+					</div>
+					<div class="btns">
+						<a href="/web/bo-quoc-phong/register" class="register"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-register.png">Đăng ký</a>
+						<a href="/web/bo-quoc-phong/register#/login-dichvucong" class="login"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-login.png">Đăng nhập</a>
+					</div>
 				</div>
 			</div>
-			<div class="nav-wrapper">
+		</header>
+
+		<div class="nav-wrapper">
+			<div class="container">
 				<#if has_navigation && is_setup_complete>
 					<#include "${full_templates_path}/navigation.ftl" />
 				</#if>
-				<div class="btns">
-					<a href="/web/bo-quoc-phong/register#/login-dichvucong" class="login"><i class="fa fa-user"></i> Đăng nhập</a>
-					<a href="/web/bo-quoc-phong/register" class="register"><i class="fa fa-user-plus"></i> Đăng ký</a>
-				</div>	
 			</div>
-		</header>
+		</div>
 		
 		<section id="content">	
 			<#if selectable>
@@ -96,14 +106,19 @@
 		</section>
 
 		<footer id="footer">
-			<p>Địa chỉ: Số 1B, Nguyễn Tri Phương, quận Ba Đình, thành phố Hà Nội</p>
-			<p>Điện thoại: 069.553215</p>
-			<p>Thư điện tử: info@mod.gov.vn</p>
+			<div class="container">
+				<p class="copyright">© Bản quyền thuộc về Bộ Quốc Phòng</p>
+				<p class="address"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-footer-1.jpg">Địa chỉ: Số 1B, Nguyễn Tri Phương, quận Ba Đình, thành phố Hà Nội</p>
+				<!--<div class="contact">-->
+					<p class="phone"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-footer-2.jpg">Điện thoại: 069.553215</p>
+					<p class="mail"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-footer-3.jpg">Thư điện tử: info@mod.gov.vn</p>
+				<!--</div>-->
+			</div>
 		</footer>
 	</div>
 	
-	<script type="text/javascript" src="https://vietopencps.github.io/frontend-opencps-v2.1/o/opencps-frontend-cli/login/app/js/app.js"></script>
-	<script type="text/javascript" src="https://vietopencps.github.io/frontend-opencps-v2.1/o/opencps-frontend-cli/login/app/js/chunk-vendors.js"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
 
 	<style>
 		#react-root .application--wrap {
@@ -135,10 +150,37 @@
 			z-index: 10;
 		}
 		#react-root {
-			min-width: 300px;
-			position: absolute;
-			top: 0;
-			right: 15px;
+			position: relative;
+		}
+		#react-root .login_wrap_app_panel .v-btn {
+			background-color: white;
+			width: 31px;
+			height: 30px;
+			margin-right: 10px !important;
+		}
+		#react-root .login_wrap_app_panel .v-btn i {
+			color: #1573bb !important;
+		}
+		#react-root .login_wrap_app_panel .v-badge__badge {
+			background-color: #ff8400 !important;
+			border: 1px solid white !important;
+			border-radius: 50% !important;
+			width: 18px !important;
+			top: -10px !important;
+			right: -20px !important;
+			padding: 0 !important;
+		}
+		#react-root .login_wrap_app_panel .v-badge__badge span {
+			font-size: 11px !important;
+			height: auto !important;
+			line-height: 16px;
+		}
+		#react-root .v-avatar {
+			background: url('/o/bo-quocphong-theme/images/bg-avatar.png') center center no-repeat !important;
+			background-size: contain !important;
+		}
+		#react-root .v-avatar span {
+			display: none;
 		}
 		#react-root .login_wrap_app_panel > div > div:last-child {
 			left: auto !important;
@@ -163,6 +205,10 @@
 		}
 		#react-root span {
 			font-size: 13px;
+			color: white;
+		}
+		#react-root span > i, #react-root .v-btn__content > .v-icon {
+			color: white !important;
 		}
 		#react-root .btn-toggle .btn--active .btn__content {
 			background: #fff;
@@ -230,197 +276,11 @@
 		.v-window__container--is-active {
 			height: auto !important;
 		}
-	
 		
-		
-		
-/*---------- Global ----------*/
-html {
-	overflow-y: auto;
-}
-body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
-	min-height: 100vh;
-}
-body ul {
-	list-style: none;
-	padding: 0;
-}
-body a, body a:hover, body a:focus {
-	text-decoration: none;
-	color: inherit;
-}
-
-.home-theme {
-	background: url(/o/bo-quocphong-theme/images/main-bg.jpg) center center no-repeat;
-	background-size: cover;
-}
-.home-theme #wrapper {
-	min-height: 100vh;
-}
-.home-theme #wrapper {
-	padding-top: 0;
-}
-.page-theme #wrapper {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-
-
-/*---------- Header ----------*/
-.home-theme #banner {
-	background: url(/o/bo-quocphong-theme/images/bg-header-home.jpg) left center no-repeat;
-}
-
-.page-theme #banner {
-	background: url(/o/bo-quocphong-theme/images/bg-header-page-1366.jpg) center center no-repeat;
-}
-
-.mBody #banner {
-	background-size: cover;
-	max-width: 100%;
-	padding: 0;
-}
-.mBody #banner .logo-wrapper {
-	padding: 10px 45px;
-}
-.signed-in .btns, .signed-out #app_login {
-	display: none;
-}
-
-@media screen and (min-width: 1367px) {
-	.page-theme #banner {
-		background-image: url(/o/bo-quocphong-theme/images/bg-header-page-1920.png);
-	}
-}
-
-@media screen and (max-width: 1366px) {
-	.mBody #banner .logo-wrapper, .mBody .nav-wrapper {
-		padding: 5px 15px !important;
-	}
-}
-
-
-
-/*---------- Navbar ----------*/
-.mBody .nav-wrapper {
-	padding: 5px 45px;
-	max-width: inherit;
-	display: -webkit-box;
-	display: flex;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-	position: relative;
-	-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.2);
-	box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.2);
-	z-index: 5;
-}
-.page-theme .nav-wrapper {
-	margin-top: 0;
-}
-.mBody #navigation .nav-toggle {
-	display: none;
-	width: 40px;
-	text-align: center;
-	line-height: 39px;
-	border: 1px solid #ca0202;
-	border-radius: 4px;
-	color: #ca0202;
-	font-size: 20px;
-}
-.mBody #navigation > ul {
-	display: -webkit-box;
-	display: flex;
-	margin-bottom: 0;
-}
-.mBody #navigation li a {
-	display: block;
-	padding: 10px 15px;
-	border-radius: 20px;
-}
-.mBody #navigation li.selected a, .mBody #navigation li:hover a {
-	font-weight: bold;
-	background-color: #ca0202;
-	color: white;
-}
-.mBody #navigation .child-menu {
-	display: none;
-}
-.mBody .btns a {
-	display: inline-block;
-	padding: 9px 15px;
-	border: 1px solid #ca0202;
-	color: #ca0202;
-	border-radius: 20px;
-	width: 145px;
-	text-align: center;
-}
-.mBody .btns a:hover, .mBody .btns a:focus {
-	color: white;
-	background-color: #ca0202;
-}
-.mBody .btns a:first-child {
-	margin-right: 10px;
-}
-
-@media screen and (max-width: 991px) {
-	.mBody #navigation .nav-toggle {
-		display: inline-block;
-	}
-	.mBody #navigation > ul {
-		display: none;
-		width: 100%;
-		position: absolute;
-		background-color: white;
-		left: 0;
-		top: 100%;
-		border: 1px solid #ccc;
-	}
-	.mBody #navigation li a {
-		border-radius: 0;
-	}
-}
-
-
-
-/*---------- Footer ----------*/
-.home-theme #footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
-
-#footer {
-	-webkit-justify-content: flex-start;
-	justify-content: flex-start;
-}
-#footer {
-	background-color: #6c000a;
-	color: white;
-	padding: 15px;
-	display: -webkit-box;
-	display: flex;
-}
-#footer p {
-	margin-bottom: 0;
-}
-#footer p:nth-child(2) {
-	margin: 0 60px;
-}
-
-@media screen and (max-width: 991px) {
-	.home-theme #footer {
-		position: relative;
-	}
-	#footer {
-		display: block;
-	}
-	#footer p:nth-child(2) {
-		margin: 10px 0;
-	}
-}
+		#mermaid_dossier #theGraph {
+			height: 350px !important;
+			min-height: 350px !important;
+		}
 	</style>
 	
 	<script>
