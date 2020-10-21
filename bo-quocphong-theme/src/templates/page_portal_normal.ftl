@@ -18,11 +18,11 @@
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=12345" rel="stylesheet" type="text/css">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=12345" rel="stylesheet" type="text/css">
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=123456789" rel="stylesheet">
+	<!-- <link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8888" rel="stylesheet" type="text/css"> -->
+	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=666" rel="stylesheet" type="text/css">
 
 	<script>
         window.__define = window.define;
@@ -42,8 +42,9 @@
 	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery-comments.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.textcomplete.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/svg-pan-zoom.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/date-time-picker.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/date-time-picker.js?t=8888"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/mermaid.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/vgcaplugin.js"></script>
 	
 	<script>
         window.define = window.__define;
@@ -72,25 +73,33 @@
 	</#if>
 
 	<div class="container-fluid" id="wrapper" style="overflow: hidden;">
-		<header id="banner" class="container">
-			<div class="logo-wrapper">
-				<a href="/">
-					<img src="${themeDisplay.getPathThemeRoot()}/images/logo-dvc.png">
-				</a>		
-				<div id="react-root" style="">
-					<div id="app_login"></div>
+		<header id="banner">
+			<div class="container">
+				<div class="logo-wrapper">
+					<a href="/" class="mLogo">
+						<img src="${themeDisplay.getPathThemeRoot()}/images/logo.png">
+						<span>
+							<label>Bộ Quốc Phòng</label>
+							Cổng dịch vụ công trực tuyến
+						</span>
+					</a>		
+					<div id="react-root" style="">
+						<div id="app_login"></div>
+					</div>
+					<div class="btns">
+						<a href="/web/bo-quoc-phong/register" class="register"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-register.png">Đăng ký</a>
+						<a href="/web/bo-quoc-phong/register#/login-dichvucong" class="login"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-login.png">Đăng nhập</a>
+					</div>
 				</div>
 			</div>
 		</header>
 		
 		<div class="nav-wrapper">
-			<#if has_navigation && is_setup_complete>
-				<#include "${full_templates_path}/navigation.ftl" />
-			</#if>
-			<div class="btns">
-				<a href="/web/bo-quoc-phong/register#/login-dichvucong" class="login"><i class="fa fa-user"></i> Đăng nhập</a>
-				<a href="/web/bo-quoc-phong/register" class="register"><i class="fa fa-user-plus"></i> Đăng ký</a>
-			</div>	
+			<div class="container">
+				<#if has_navigation && is_setup_complete>
+					<#include "${full_templates_path}/navigation.ftl" />
+				</#if>
+			</div>
 		</div>
 
 		<section id="content">
@@ -108,19 +117,23 @@
 		</section>
 
 		<footer id="footer">
-			<p>Địa chỉ: Số 1B, Nguyễn Tri Phương, quận Ba Đình, thành phố Hà Nội</p>
-			<p>Điện thoại: 069.553215</p>
-			<p>Thư điện tử: info@mod.gov.vn</p>
-		</footer>
-		
+			<div class="container">
+				<p class="copyright">© Bản quyền thuộc về Bộ Quốc Phòng</p>
+				<p class="address"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-footer-1.jpg">Địa chỉ: Số 1B, Nguyễn Tri Phương, quận Ba Đình, thành phố Hà Nội</p>
+				<!--<div class="contact">-->
+					<p class="phone"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-footer-2.jpg">Điện thoại: 069.553215</p>
+					<p class="mail"><img src="${themeDisplay.getPathThemeRoot()}/images/icon-footer-3.jpg">Thư điện tử: info@mod.gov.vn</p>
+				<!--</div>-->
+			</div>
+		</footer>		
 	</div>
 	
 	<a href="" class="btt"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
 	<a href="/web/bo-quoc-phong" class="bth"><i class="fa fa-home" aria-hidden="true"></i></a>
 		
 	<!-- inject:js -->
-	<script type="text/javascript" src="https://vietopencps.github.io/frontend-opencps-v2.1/o/opencps-frontend-cli/login/app/js/app.js"></script>
-	<script type="text/javascript" src="https://vietopencps.github.io/frontend-opencps-v2.1/o/opencps-frontend-cli/login/app/js/chunk-vendors.js"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>	
 	<#if permissionChecker.isOmniadmin()>
 		<@liferay_util["include"] page=body_bottom_include />
 		<@liferay_util["include"] page=bottom_include />
@@ -138,7 +151,7 @@
 		
 			$(".header_login .logo > img").attr("src","o/bo-quocphong-theme/images/logo-login-dvc.png");
 			
-			$(".body_login .header_login + div").append("<div class='temp-footer'><p>Địa chỉ: Số 1B, Nguyễn Tri Phương, quận Ba Đình, thành phố Hà Nội</p><p>Điện thoại: 069.553215</p><p>Thư điện tử: info@mod.gov.vn</p></div>");
+			//$(".body_login .header_login + div").append("<div class='temp-footer'><p>Địa chỉ: Số 1B, Nguyễn Tri Phương, quận Ba Đình, thành phố Hà Nội</p><p>Điện thoại: 069.553215</p><p>Thư điện tử: info@mod.gov.vn</p></div>");
 			
 			//Back to top
 			var offset = 300,
@@ -304,11 +317,40 @@
 			z-index: 10;
 		}
 		#react-root {
-			min-width: 300px;
-			width: 100%;
-			position: absolute;
-			top: 15px;
-			right: 15px;
+			position: relative;
+		}
+		#react-root .login_wrap_app_panel .v-btn {
+			background-color: white;
+			width: 31px;
+			height: 30px;
+			margin-right: 10px !important;
+		}
+		#react-root .login_wrap_app_panel .v-btn i {
+			color: #1573bb !important;
+		}
+		#react-root .login_wrap_app_panel .v-badge__badge {
+			background-color: #ff8400 !important;
+			border: 1px solid white !important;
+			border-radius: 50% !important;
+			width: 18px !important;
+			top: -10px !important;
+			right: -20px !important;
+			padding: 0 !important;
+		}
+		#react-root .login_wrap_app_panel .v-badge__badge span {
+			font-size: 11px !important;
+			height: auto !important;
+			line-height: 16px;
+		}
+		#react-root .v-avatar {
+			background: url('/o/bo-quocphong-theme/images/bg-avatar.png') center center no-repeat !important;
+			background-size: contain !important;
+		}
+		#react-root .v-avatar span {
+			display: none;
+		}
+		#react-root .login_wrap_app_panel .v-list__tile {
+			height: auto;
 		}
 		#react-root .login_wrap_app_panel > div > div:last-child {
 			left: auto !important;
@@ -334,12 +376,12 @@
 		#react-root span {
 			font-size: 13px;
 			color: white;
-			text-shadow: -1px -1px 0 #000, 
+			/*text-shadow: -1px -1px 0 #000, 
 	             1px -1px 0 #000, 
 	             -1px 1px 0 #000,  
-	             1px 1px 0 #000;
+	             1px 1px 0 #000;*/
 		}
-		#react-root span > i, #react-root .v-icon {
+		#react-root span > i, #react-root .v-btn__content > .v-icon {
 			color: white !important;
 		}
 		#react-root .btn-toggle .btn--active .btn__content {
@@ -409,128 +451,370 @@
 			height: auto !important;
 		}
 		
-		
 		.body_login {
 			background: url("/o/bo-quocphong-theme/images/bg-login.jpg") center center no-repeat;
 			background-size: cover;
+			min-height: 100vh;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
-		.body_login #banner, .body_login #footer, .body_login .nav-wrapper {
-			display: none !important;
+		body.body_login * {
+			font-size: 14px;
+		}
+		.body_login .application--wrap {
+			min-height: inherit;
+		}
+		.body_login #banner, .body_login .nav-wrapper, .body_login #footer {
+			display: none;
 		}
 		.body_login .theme--light.application {
 			background-color: transparent;
 		}
 		.body_login #login_container {
-			max-width: 1300px;
+			max-width: 600px;
 			margin: auto;
 			position: relative;
-			top: 50%;
-			left: 0;
-			-webkit-transform: translateY(-50%);
-			transform: translateY(-50%);
-			padding: 0 15px;
-		}
-		.body_login .header_login {
-			text-align: left !important;
+			padding: 45px 75px 75px;
+			display: flex;
+			flex-wrap: wrap;
+			border-radius: 10px;
+			box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.3);
+			background-color: white;
 		}
 		.body_login .logo img {
-			margin-bottom: 60px;
+			margin-bottom: 30px;
 			max-width: 100%;
 		}
-		.body_login .header_login + div {
-			margin: 0 !important;
-		}
 		.body_login nav.primary {
-			background-color: transparent !important;
-			border: 0 !important;
-		}
-		.body_login nav > div {
-			-webkit-justify-content: left !important;
-			justify-content: left !important;
-		}
-		.body_login nav h4 {
-			font-size: 16px;
+			display: none;
 		}
 		.body_login nav + div {
 			border: 0 !important;
 			padding: 0 !important;
 		}
 		.body_login .v-input__slot {
-			background-color: transparent !important;
+			border: 0 !important;
+			border-radius: 0 !important;
+			overflow: hidden;
+			background-color: white !important;
+			margin: 0 auto 25px;
+			padding: 0 !important;
+			position: relative;
 		}
-		.body_login .v-input__slot:before, .body_login .v-input__slot:after {
-			border: 1px solid #f00 !important;
+		.body_login .v-form > div:nth-child(1) .v-input__slot:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+			height: 21px;
+			width: 31px;
+			display: block;
+			background: url('/o/bo-quocphong-theme/images/icon-user.png') center center no-repeat;
+			background-size: cover;
+			border: 0;
+			left: auto;
+			z-index: 9999;
+			pointer-events: none;
+			transition: none;
+		}		
+		.body_login .v-form > div:nth-child(2) .v-input__slot:after {
+			content: "";
+			position: absolute;
+			top: 50%;
+			right: 10px;
+			transform: translateY(-50%);
+			height: 21px;
+			width: 35px;
+			display: block;
+			background: url('/o/bo-quocphong-theme/images/icon-pass.png') center center no-repeat;
+			background-size: cover;
+			border: 0;
+			left: auto;
+			z-index: 9999;
+			pointer-events: none;
+			transition: none;
 		}
-		.body_login .v-input__slot:hover:before {
-			border: 1px solid #f00 !important;
+		.body_login .v-input__slot input {
+			border: 1px solid #b9b9b9 !important;
+			border-radius: 4px !important;
 		}
-		.body_login .v-input__icon .v-icon {
-			color: #f00 !important;
+		.body_login .v-input__slot input:focus {
+			border-color: #7fabe4 !important;
 		}
 		.body_login .v-text-field__slot input {
-			font-size: 14px;
-			/*color: white !important;*/
+			font-size: 16px;
+			margin: 0 !important;
+			height: 44px;
+			max-height: inherit;
+			padding: 0 15px;
+		}
+		.body_login .v-input__slot > .v-input__prepend-inner, .body_login .v-input__slot:after {
+			display: none;
+		}
+		.body_login .v-text-field__slot .v-icon {
+			color: white !important;
+		}
+		.body_login .v-text-field__details {
+			display: none;
 		}
 		.body_login .v-text-field__slot input:-webkit-autofill,
 		.body_login .v-text-field__slot input:-webkit-autofill:hover, 
 		.body_login .v-text-field__slot input:-webkit-autofill:focus
 		.body_login .v-text-field__slot input:-webkit-autofill {
-			border:none !important;
-			-webkit-text-fill-color: #f00 !important;
+			/*border:none !important;
+			-webkit-text-fill-color: white !important;*/
 			transition: background-color 5000s ease-in-out 0s;
 		}
-		.body_login .v-text-field__slot input::-webkit-input-placeholder {color: #2a2a2a !important;}
-		.body_login .v-text-field__slot input:-moz-placeholder {color:#2a2a2a !important; opacity: 1;}
-		.body_login .v-text-field__slot input::-moz-placeholder {color: #2a2a2a !important; opacity: 1;}
-		.body_login .v-text-field__slot input:-ms-input-placeholder {color: #2a2a2a !important;}
-		.body_login .temp-footer {
-			margin-top: 60px;
-			font-size: 14px;
-		}
-		.body_login .header_login + div .primary--text, .body_login .header_login + div .v-input--selection-controls__ripple + i {
-			color: #f00 !important;
-		}
-		.body_login button .v-icon {
+		.body_login .v-text-field__slot input::-webkit-input-placeholder {color: #757575 !important;}
+		.body_login .v-text-field__slot input:-moz-placeholder {color:#757575 !important; opacity: 1;}
+		.body_login .v-text-field__slot input::-moz-placeholder {color: #757575 !important; opacity: 1;}
+		.body_login .v-text-field__slot input:-ms-input-placeholder {color: #757575 !important;}
+		/*.body_login .header_login + div .primary--text, .body_login .header_login + div .v-icon, .body_login .header_login + div .v-input--selection-controls__ripple + i {
 			color: white !important;
+		}*/
+		.body_login .v-form > div:nth-child(3) {
+			margin: 0 auto 30px	!important;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+		.body_login .v-form > div:nth-child(3) * {
+			font-size: 16px;
+			white-space: nowrap;
+		}
+		.body_login .v-form > div:nth-child(3) > div:last-child {
+			padding: 0;
+			max-width: inherit !important;
+			flex: 0 0 auto;
+		}
+		.body_login .v-form > div:nth-child(3) > div:last-child .primary--text {
+			color: #0058c9 !important;
+			boder-bottom: 1px solid #0058c9;
+		}
+		.body_login .v-form > div:nth-child(3) .v-input--selection-controls__input {
+			margin: 0;
+		}
+		.body_login .v-input--selection-controls:not(.v-input--hide-details) .v-input__slot {
+			background-color: transparent !important;
+			border: 0 !important;
+			margin: 0;
+		}
+		.body_login .header_login {
+			text-align: center;
+			width: 100%;
+		}
+		.body_login .header_login ~ div {
+			flex: 1 1 auto;
+		}
+		.body_login #login_container > div:nth-child(2) {
+			background: url("/o/bo-tttt-theme/images/bg-login-1.jpg") center center no-repeat;
+			background-size: cover;
+			border-radius: 8px 0 0 8px;
+			padding: 0;
+			margin-top: 0 !important;
+			max-width: 480px !important;
+		}		
+		.body_login #login_container > div:nth-child(3) {
+			width: 100%;
+			text-align: center;
+			color: #ef9c00;
+		}
+		.body_login #login_container > div:nth-child(3) p:not(:last-child) {
+			margin-bottom: 5px;
+		}
+		.body_login #login_container > div:nth-child(3) p:last-child {
+			font-style: italic;
+			color: white;
+			margin: 10px 0 0;
+		}
+		.body_login #login_container .v-form > div:last-child {
+			display: flex;
+			flex-wrap: wrap;
 		}
 		.body_login .header_login + div .v-btn {
-			background-color: #f00 !important;
-			border-color: #f00 !important;
+			border-radius: 6px;
+			padding: 5px 15px;
+			height: auto;
+			text-transform: uppercase;
+			font-weight: bold;
+		}
+		.body_login .header_login + div .v-btn > div {
+			font-size: 20px;
+		}
+		.body_login .header_login + div .v-btn:last-child > div {
+			font-size: 18px;
+		}
+		.body_login .header_login + div .v-btn .v-icon {
+			font-size: 24px;
+		}
+		.body_login .header_login + div .v-btn:nth-child(1) {
+			order: 2;
+			font-size: 20px;
+			background-color: #017dba !important;
+			color: white;
+			flex: 1 1 calc((100% - 30px) / 2);
+			margin: 0 0 0 30px !important;
+		}
+		.body_login .header_login + div .v-btn:nth-child(1):hover, .body_login .header_login + div .v-btn:nth-child(1):focus, .body_login .header_login + div .v-btn:nth-child(1):active {
+			background-color: #104590 !important;
+		}
+		.body_login .header_login + div .v-btn:nth-child(2) {
+			order: 1;
+			font-size: 20px;
+			background-color: #fff !important;
+			color: #17a5eb !important;
+			border: 1px solid #17a5eb !important;
+			flex: 1 1 calc((100% - 30px) / 2);
+			margin: 0 !important;
+		}
+		.body_login .header_login + div .v-btn:nth-child(2):hover, .body_login .header_login + div .v-btn:nth-child(2):focus, .body_login .header_login + div .v-btn:nth-child(2):active {
+			color: #104590 !important;
+			border-color: #104590 !important;
+			background-color: #c3eafa !important;
+		}
+		.body_login .header_login + div .v-btn:nth-child(1) .v-icon {
+			color: white !important;
+		}
+		.body_login .header_login + div .v-btn:last-child {
+			color: #0058c9 !important;
+			border-bottom: 1px solid #0058c9 !important;
+			margin: 50px auto 0 !important;
+			padding: 2px 0 !important;
+			border-radius: 0 !important;
+			height: auto;
+			background-color: transparent !important;
+			order: 3;
+			text-transform: none;
+			font-weight: normal;
 		}
 		.body_login .theme--light.v-sheet {
 			background-color: transparent !important;
 			border: 0 !important;
 		}
-		
-		
-		body .btt, body .bth {
-			position: fixed;
-			bottom: 100px;
-			right: 30px;
-			background-color: #ca0202;
-			width: 42px;
-			height: 42px;
-			border-radius: 50%;
-			text-align: center;
-			line-height: 40px;
-			display: none;
+		.body_login .temp-footer {
 			color: white;
-			font-size: 24px;
+			margin-top: 90px;
+			text-align: center;
 		}
-		body .btt.btt-is-visible, body .bth.btt-is-visible {
+		.body_login .temp-footer .copyright {
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.body_login .temp-footer .mail {
+			margin-left: 30px;
+		}
+		.body_login .fogot-pass .v-input__slot {
+			max-width: 100%;
+			margin-bottom: 15px;
+		}
+		.body_login .v-form > div:nth-child(3) {
+			max-width: 100%;
+		}
+		.body_login .fogot-pass .v-text-field__slot input {
+			border-bottom: 1px solid white;
+		}
+		.body_login .forgot-pass-wrapper {
 			display: block;
 		}
-		body .btt:hover, body .bth:hover {
-			background-color: #ca0202;
-			color: white !important;
+		.body_login .forgot-pass-wrapper .header_login {
+			margin-top: 10%;
 		}
-		body .bth {
-			right: auto;
-			left: 30px;
+		.body_login .forgot-pass-wrapper main form {
+			background: url("/o/bo-tttt-theme/images/bg-forgot-pass.png") center center no-repeat;
+			background-size: cover;
+			padding: 30px !important;
+			border-radius: 20px !important;
+		}
+		.body_login .forgot-pass-wrapper main form > div:nth-child(3) > div > div:first-child {
+			background-color: transparent !important;
+			justify-content: flex-start !important;
+		}
+		.body_login .forgot-pass-wrapper .header_login + div .v-btn:last-child {
+			display: inline-block;
+		}
+		.body_login .forgot-pass-wrapper p {
+			text-align: center;
+			color: white;
+		}
+		.body_login .forgot-pass-wrapper img + button {
+			border: 0 !important;
+			background-color: transparent !important;
+			width: auto !important;
+			height: auto !important;
+			padding: 0 !important;
+			min-width: inherit !important;
+		}
+		#react-root .login_wrap_app_panel > div > div:last-child {
+			left: auto !important;
+			right: 0;
+			top: 110% !important;
+		}
+		.body_login main {
+			display: flex;
+			align-items: center;
+		}
+
+		@media screen and (max-width: 1366px) {
+			.body_login #login_container {
+				padding: 30px 15px; 
+			}
+			.body_login .logo img {
+				margin-bottom: 15px;
+			}
+			.body_login .header_login + div .v-btn:last-child {
+				margin-top: 25px !important;
+			}
+			.body_login .temp-footer {
+				margin-top: 15px;
+			}
+		}
+		
+		@media screen and (max-width: 767px) {
+			.body_login {
+				background: white;
+			}
+			.body_login #login_container {
+				background: transparent none;
+				padding: 15px;
+				box-shadow: none;
+			}
+			.body_login #login_container > div:nth-child(2) {
+				padding: 30px 0;
+			}
+			.body_login #login_container > div:nth-child(3) p:not(:last-child) {
+				font-size: 13px;
+			}
+			.body_login .temp-footer {
+				color: #2a2a2a;
+				padding: 0 15px;
+			}
+			.body_login .temp-footer span {
+				display: block;
+			}
 		}
 		
 		
-		.page-theme .primary--text, .page-theme .status__counter, .page-theme h3, .manual-wrapper .manual-content h2 {
+		.timeline-item {
+			padding-bottom: 5px;
+			padding-left: 40px;
+			padding-top: 5px;
+			position: relative;
+		}
+		
+		.background-triangle-big, .background-triangle-small {
+			background-color: #0072bc !important;
+		}
+		.background-triangle-big:before {
+			border-top: 26px solid #0072bc;
+		}
+		.background-triangle-small:before {
+			border-top: 19px solid #0072bc;
+		}
+		
+		
+		/*.page-theme .primary--text, .page-theme .status__counter, .page-theme h3, .manual-wrapper .manual-content h2 {
 			color: #ca0202 !important;
 		}
 		.page-theme .primary {
@@ -557,206 +841,40 @@
 		}
 		.manual-wrapper .tocify li:hover, .manual-wrapper .tocify .active {
 			background-color: #ca0202 !important;
-		}
+		}*/
 		
 		body.page-theme .deactive__btn {
 			background-color: #0d7535 !important;
+		}		
+		body.page-theme .on-hover-btn:hover {
+			background-color: #f00 !important;
 		}
 		
+		#mermaid_dossier #theGraph {
+			height: 350px !important;
+			min-height: 350px !important;
+		}
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-/*---------- Global ----------*/
-html {
-	overflow-y: auto;
-}
-body {
-	font-family: 'Roboto', sans-serif;
-	font-size: 14px;
-	min-height: 100vh;
-}
-body ul {
-	list-style: none;
-	padding: 0;
-}
-body a, body a:hover, body a:focus {
-	text-decoration: none;
-	color: inherit;
-}
-
-.home-theme {
-	background: url(/o/bo-quocphong-theme/images/main-bg.jpg) center center no-repeat;
-	background-size: cover;
-}
-.home-theme #wrapper {
-	min-height: 100vh;
-}
-.home-theme #wrapper {
-	padding-top: 0;
-}
-.page-theme #wrapper {
-	padding-left: 0;
-	padding-right: 0;
-}
-
-
-
-/*---------- Header ----------*/
-.home-theme #banner {
-	background: url(/o/bo-quocphong-theme/images/bg-header-home.jpg) left center no-repeat;
-}
-
-.page-theme #banner {
-	background: url(/o/bo-quocphong-theme/images/bg-header-page-1920.png) center center no-repeat;
-}
-
-.mBody #banner {
-	background-size: cover;
-	max-width: 100%;
-	padding: 0;
-}
-.mBody #banner .logo-wrapper {
-	padding: 10px 45px;
-}
-.signed-in .btns, .signed-out #app_login {
-	display: none;
-}
-
-@media screen and (min-width: 1367px) {
-	.page-theme #banner {
-		background-image: url(/o/bo-quocphong-theme/images/bg-header-page-1920.png);
-	}
-}
-
-@media screen and (max-width: 1366px) {
-	.mBody #banner .logo-wrapper, .mBody .nav-wrapper {
-		padding: 5px 15px !important;
-	}
-}
-
-
-
-/*---------- Navbar ----------*/
-.mBody .nav-wrapper {
-	padding: 5px 45px;
-	max-width: inherit;
-	display: -webkit-box;
-	display: flex;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
-	position: relative;
-	-webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.2);
-	box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.2);
-	z-index: 5;
-}
-.mBody #navigation .nav-toggle {
-	display: none;
-	width: 40px;
-	text-align: center;
-	line-height: 39px;
-	border: 1px solid #ca0202;
-	border-radius: 4px;
-	color: #ca0202;
-	font-size: 20px;
-}
-.mBody #navigation > ul {
-	display: -webkit-box;
-	display: flex;
-	margin-bottom: 0;
-}
-.mBody #navigation li a {
-	display: block;
-	padding: 10px 15px;
-	border-radius: 20px;
-}
-.mBody #navigation li.selected a, .mBody #navigation li:hover a {
-	font-weight: bold;
-	background-color: #ca0202;
-	color: white;
-}
-.mBody #navigation .child-menu {
-	display: none;
-}
-.mBody .btns a {
-	display: inline-block;
-	padding: 9px 15px;
-	border: 1px solid #ca0202;
-	color: #ca0202;
-	border-radius: 20px;
-	width: 145px;
-	text-align: center;
-}
-.mBody .btns a:hover, .mBody .btns a:focus {
-	color: white;
-	background-color: #ca0202;
-}
-.mBody .btns a:first-child {
-	margin-right: 10px;
-}
-
-@media screen and (max-width: 991px) {
-	.mBody #navigation .nav-toggle {
-		display: inline-block;
-	}
-	.mBody #navigation > ul {
-		display: none;
-		width: 100%;
-		position: absolute;
-		background-color: white;
-		left: 0;
-		top: 100%;
-		border: 1px solid #ccc;
-	}
-	.mBody #navigation li a {
-		border-radius: 0;
-	}
-}
-
-
-
-/*---------- Footer ----------*/
-.home-theme #footer {
-	position: absolute;
-	bottom: 0;
-	width: 100%;
-}
-
-#footer {
-	-webkit-justify-content: flex-start;
-	justify-content: flex-start;
-}
-#footer {
-	background-color: #ca0202;
-	color: white;
-	padding: 15px;
-	display: -webkit-box;
-	display: flex;
-}
-#footer p {
-	margin-bottom: 0;
-}
-#footer p:nth-child(2) {
-	margin: 0 60px;
-}
-
-@media screen and (max-width: 991px) {
-	.home-theme #footer {
-		position: relative;
-	}
-	#footer {
-		display: block;
-	}
-	#footer p:nth-child(2) {
-		margin: 10px 0;
-	}
-}
+		.row-header .background-triangle-big {
+			background-color: white !important;
+			color: #0072bc;
+			font-weight: bold;
+			padding-left: 25px;
+		}
+		.row-header .background-triangle-big:before {
+			border-width: 8px 0 8px 8px;
+			left: 5px;
+			right: auto;
+			top: 15px;
+		}
+		.row-header {
+			background-color: white;
+		}
+		.row-header .header_tools input {
+			border-bottom: 1px solid #ddd;
+			max-width: 400px;
+			margin-left: auto;
+		}
 	</style>
 	
 	<script type="text/javascript">

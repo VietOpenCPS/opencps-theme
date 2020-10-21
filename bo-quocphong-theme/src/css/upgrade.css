@@ -69,7 +69,7 @@ body .v-list__group__header--active {
 body .v-navigation-drawer>.v-list:not(.v-list--dense) .v-list__tile,
 body .v-input,
 body .v-label {
-    font-size: 13px;
+    font-size: 14px;
 }
 body .v-list__tile__title {
     font-size: 12px;
@@ -178,7 +178,7 @@ body table.v-table thead th:not(:first-child) {
 
 table.v-table tbody td {
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     border-right: 1px solid #d3d3d3;
     vertical-align: top;
 }
@@ -203,7 +203,7 @@ body .v-text-field>.v-input__control>.v-input__slot:before {
 }
 body .menuable__content__active .v-list .v-list__tile {
     padding: 0 16px;
-    font-size: 13px;
+    font-size: 14px;
     border-bottom: 1px dashed #ddd;
 }
 body .menuable__content__active .v-list > div:last-child .v-list__tile {
@@ -291,7 +291,7 @@ body .notification_wrap > div:last-child {
     background: transparent;
 }
 body #react-root .theme--light .v-list__tile__title {
-    font-size: 13px ;
+    font-size: 14px ;
 }
 body #react-root .application--wrap {
     background: transparent !important;
@@ -419,14 +419,14 @@ body .v-select.v-text-field--enclosed:not(.v-text-field--single-line) .v-select_
 
 #app_serviceinfo table.table tbody td{
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     border-right: 1px solid #d3d3d3;
     vertical-align: top;
     margin: 0;
 }
 #app_serviceinfo table.table tbody tr {
     font-weight: 400;
-    font-size: 13px;
+    font-size: 14px;
     vertical-align: top;
 }
 #app_serviceinfo table {
@@ -458,7 +458,7 @@ body .report__table {
 body #app .theme--light.v-subheader {
     color: rgb(31, 31, 31);
     height: 32px;
-    font-size: 13px;
+    font-size: 14px;
     float: right;
 }
 body .help-block.alpaca-message {
