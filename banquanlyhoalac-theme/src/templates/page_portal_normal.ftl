@@ -144,7 +144,7 @@
 		
 			$(".header_login .logo > img").attr("src","o/banquanlyhoalac-theme/images/logo-login-motcua.png");
 			$(".dvc-theme .header_login .logo > img").attr("src","o/banquanlyhoalac-theme/images/logo-login-dvc.png");
-			$(".header_login + div").after("<div class='footer_login'><p><b>Địa chỉ:</b> Km 29, Đại lộ Thăng Long, Thạch Thất, Hà Nội</p><p><b>Địa chỉ:</b> Điện thoại: (84 24) 6326 9295</p><p><b>Địa chỉ:</b> Thư điện tử: info@hhtp.gov.vn</p></div>");
+			$(".header_login + div").after("<div class='footer_login'><p><b>Địa chỉ:</b> Km 29, Đại lộ Thăng Long, Thạch Thất, Hà Nội</p><p><b>Điện thoại:</b> (84 24) 6326 9295</p><p><b>Thư điện tử: </b>info@hhtp.gov.vn</p></div>");
 			
 			//Back to top
 			var offset = 300,
