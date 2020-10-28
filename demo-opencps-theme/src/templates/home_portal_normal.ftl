@@ -90,6 +90,7 @@
 				<span class="hid">|</span>
 				<span>Email: </span>
 			</p>
+			<p style="display: inline-block; position: absolute; right: 10px; bottom: 15px; font-style: italic;">Trang demo là sản phẩm của đề tài Natif</p>
 		</footer>
 	</div>
 

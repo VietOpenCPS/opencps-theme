@@ -69,8 +69,10 @@
 				<div id="react-root" style="">
 					<div id="app_login"></div>
 				</div>
-				<a href="/web/dich-vu-cong-hoa-lac/dang-ky" class="btn-banner btn-register">Đăng ký</a>
-				<a href="/web/dich-vu-cong-hoa-lac/dang-ky#/login-dichvucong" class="btn-banner btn-login">Đăng nhập</a>
+				<div class="signed-out-actions">
+					<a href="/web/dich-vu-cong-hoa-lac/dang-ky" class="btn-banner btn-register">Đăng ký</a>
+					<a href="/web/dich-vu-cong-hoa-lac/dang-ky#/login-dichvucong" class="btn-banner btn-login">Đăng nhập</a>
+				</div>
 			</div>
 		</header>
 
