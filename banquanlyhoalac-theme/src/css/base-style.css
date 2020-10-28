@@ -246,10 +246,11 @@ body {
 		top: 45px;
 	}
 	.login_wrap_app_panel {
+		margin-top: 0 !important;
 		display: inline-block;
 		position: absolute;
 		right: 0;
-		top: 70px;
+		top: 65px;
 	}
 }
 
@@ -265,6 +266,7 @@ body {
 		right: 0;
 	}
 	.login_wrap_app_panel {
+		margin-top: 0 !important;
 		display: inline-block;
 		position: absolute;
 		right: 0;
