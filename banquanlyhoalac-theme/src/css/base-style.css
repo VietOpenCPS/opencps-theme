@@ -236,11 +236,20 @@ body {
 	.signed-out-actions{
 		width: 205px;
 		position: absolute;
-		top: 80px;
+		top: 75px;
 		right: 0;
 	}
+	.home-theme #navigation {
+		position: relative;
+	}
 	.mBody #navigation > ul {
-		top: 110px;
+		top: 45px;
+	}
+	.login_wrap_app_panel {
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 70px;
 	}
 }
 
@@ -252,8 +261,14 @@ body {
 	.signed-out-actions{
 		width: 205px;
 		position: absolute;
-		top: 55px;
+		top: 50px;
 		right: 0;
+	}
+	.login_wrap_app_panel {
+		display: inline-block;
+		position: absolute;
+		right: 0;
+		top: 40px;
 	}
 }
 
