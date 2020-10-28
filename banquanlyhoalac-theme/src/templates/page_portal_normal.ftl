@@ -18,7 +18,7 @@
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=123456789" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=1206533149" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789987" rel="stylesheet">
 
@@ -81,8 +81,10 @@
 				<div id="react-root" style="">
 					<div id="app_login"></div>
 				</div>
-				<a href="/web/dich-vu-cong-hoa-lac/dang-ky" class="btn-banner btn-register">Đăng ký</a>
-				<a href="/web/dich-vu-cong-hoa-lac/dang-ky#/login-dichvucong" class="btn-banner btn-login">Đăng nhập</a>
+				<div class="signed-out-actions">
+					<a href="/web/dich-vu-cong-hoa-lac/dang-ky" class="btn-banner btn-register">Đăng ký</a>
+					<a href="/web/dich-vu-cong-hoa-lac/dang-ky#/login-dichvucong" class="btn-banner btn-login">Đăng nhập</a>
+				</div>
 			</div>
 		</header>
 
