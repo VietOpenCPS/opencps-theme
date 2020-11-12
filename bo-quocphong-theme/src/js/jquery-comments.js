@@ -847,7 +847,6 @@
 
 		appendNewComments: function() {
 			var self = this;
-			console.log($(self.$el.context), $(self.$el.context).length);
 			if ($(self.$el.context).length == 0) {
 				clearTimeout(myVar);
 				return;
@@ -867,7 +866,7 @@
 			};
 
 			var error = function() {
-				console.log('jquery comment append new error');
+				// console.log('jquery comment append new error');
 			};
 			var myVar = setTimeout(function(){self.appendNewComments()},30000);
 			this.options.appendNewComments(commentJSONs, success, error);
