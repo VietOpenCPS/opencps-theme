@@ -101,6 +101,14 @@
 				<p><b>Hướng dẫn Thủ tục hành chính:</b> 0293.3554567</p>
 				<div class="divide">|</div>
 				<p><b>Email:</b> dichvucong@haugiang.gov.vn</p>
+				<div style="
+					display: inline-block;
+					position: absolute;
+					right: 10px;
+				">
+					Đang truy cập:&nbsp;
+					<span id="counterVisitor" class="">0</span>
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -108,6 +116,37 @@
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script>
+		var settingsGetTracking = {
+			"url": "http://thongke.fds.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "1",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "b0a9a426253ca32c552492ab1e41bbee"
+			}
+		};
+		var getTracking = function () {
+			$.ajax(settingsGetTracking ).done(function (response) {
+				if (response && response[0] && response[0].hasOwnProperty('visitors')) {
+					$("#counterVisitor").html(response[0]['visitors'])
+				}
+				setTimeout (function () {
+					getTracking()
+				}, 5000)
+			}).fail(function(jqXHR, textStatus, errorThrown) {
+				setTimeout (function () {
+					getTracking()
+				}, 5000)
+			});
+		}
+		getTracking()
+	</script>
 	<script>
 		$(document).ready(function() {
 			$("#navigation .nav-toggle").on('click', function(e) {

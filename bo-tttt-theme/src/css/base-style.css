@@ -68,7 +68,7 @@ body {
 	-webkit-flex: 0 1 auto;
 	flex: 1 1 auto;
 	padding-right: 30px;
-	border-right: 1px solid #005073;
+	border-right: none !important;
 }
 #footer .info-left .owner {
 	display: -webkit-box;
@@ -121,7 +121,7 @@ body {
 	display: flex;
 	-webkit-align-items: center;
 	align-items: center;
-	margin-top: 10px;
+	margin-top: 0px !important;
 }
 #footer .info-right .other-info img {
 	margin-right: 10px;
@@ -298,7 +298,9 @@ body .bth {
 	right: auto;
 	left: 30px;
 }
-
+.login_wrap_app_panel .v-badge{
+	display: none !important;
+}
 
 
 /*---------- Login ----------*/
