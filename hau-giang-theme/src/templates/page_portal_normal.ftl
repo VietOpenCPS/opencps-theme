@@ -60,9 +60,9 @@
 		_paq.push(['trackPageView']);
 		_paq.push(['enableLinkTracking']);
 		(function() {
-		  var u="//thongke.fds.vn/";
+		  var u="//thongke.opencps.vn/";
 		  _paq.push(['setTrackerUrl', u+'matomo.php']);
-		  _paq.push(['setSiteId', '1']);
+		  _paq.push(['setSiteId', '2']);
 		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 		})();
@@ -150,6 +150,14 @@
 				<p><b>Hướng dẫn Thủ tục hành chính:</b> 0293.3554567</p>
 				<div class="divide">|</div>
 				<p><b>Email:</b> dichvucong@haugiang.gov.vn</p>
+				<div style="
+					display: inline-block;
+					position: absolute;
+					right: 10px;
+				">
+					Đang truy cập:&nbsp;
+					<span id="counterVisitor" class="">0</span>
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -160,6 +168,37 @@
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script>
+		var settingsGetTracking = {
+			"url": "https://thongke.opencps.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "2",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "88f691fc0e327c1f67866138f3675e24"
+			}
+		};
+		var getTracking = function () {
+			$.ajax(settingsGetTracking ).done(function (response) {
+				if (response && response[0] && response[0].hasOwnProperty('visitors')) {
+					$("#counterVisitor").html(response[0]['visitors'])
+				}
+				// setTimeout (function () {
+				// 	getTracking()
+				// }, 5000)
+			}).fail(function(jqXHR, textStatus, errorThrown) {
+				// setTimeout (function () {
+				// 	getTracking()
+				// }, 5000)
+			});
+		}
+		getTracking()
+	</script>
 	<#if permissionChecker.isOmniadmin()>
 		<@liferay_util["include"] page=body_bottom_include />
 		<@liferay_util["include"] page=bottom_include />

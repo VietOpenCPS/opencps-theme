@@ -118,17 +118,17 @@
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
 	<script>
 		var settingsGetTracking = {
-			"url": "http://thongke.fds.vn",
+			"url": "https://thongke.opencps.vn",
 			"method": "GET",
 			"headers": {
 			},
 			"data": {
 				"module": "API",
 				"method": "Live.getCounters",
-				"idSite": "1",
+				"idSite": "2",
 				"lastMinutes": "1",
 				"format": "JSON",
-				"token_auth": "b0a9a426253ca32c552492ab1e41bbee"
+				"token_auth": "88f691fc0e327c1f67866138f3675e24"
 			}
 		};
 		var getTracking = function () {
@@ -136,13 +136,13 @@
 				if (response && response[0] && response[0].hasOwnProperty('visitors')) {
 					$("#counterVisitor").html(response[0]['visitors'])
 				}
-				setTimeout (function () {
-					getTracking()
-				}, 5000)
+				// setTimeout (function () {
+				// 	getTracking()
+				// }, 5000)
 			}).fail(function(jqXHR, textStatus, errorThrown) {
-				setTimeout (function () {
-					getTracking()
-				}, 5000)
+				// setTimeout (function () {
+				// 	getTracking()
+				// }, 5000)
 			});
 		}
 		getTracking()

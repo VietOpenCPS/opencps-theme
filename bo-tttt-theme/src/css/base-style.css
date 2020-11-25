@@ -301,6 +301,9 @@ body .bth {
 .login_wrap_app_panel .v-badge{
 	display: none !important;
 }
+.container-login .btt-go-back {
+	display: none !important;
+  }
 
 
 /*---------- Login ----------*/

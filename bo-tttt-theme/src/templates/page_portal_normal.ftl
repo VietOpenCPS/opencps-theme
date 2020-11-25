@@ -559,9 +559,9 @@
 		.body_login .header_login + div .v-btn:hover .v-icon {
 			color: white !important;
 		}
-		.body_login .header_login + div .v-btn:last-child {
+		/* .body_login .header_login + div .v-btn:last-child {
 			display: none;
-		}
+		} */
 		.body_login .theme--light.v-sheet {
 			background-color: transparent !important;
 			border: 0 !important;
