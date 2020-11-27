@@ -149,7 +149,7 @@
 				$(this).next().slideToggle();
 			});
 		
-			$(".header_login .logo > img").attr("src","o/bo-quocphong-theme/images/logo-login-dvc.png");
+			$(".login-dvc .header_login .logo > img").attr("src","o/bo-quocphong-theme/images/logo-login-dvc.png");
 			
 			//$(".body_login .header_login + div").append("<div class='temp-footer'><p>Địa chỉ: Số 1B, Nguyễn Tri Phương, quận Ba Đình, thành phố Hà Nội</p><p>Điện thoại: 069.553215</p><p>Thư điện tử: info@mod.gov.vn</p></div>");
 			

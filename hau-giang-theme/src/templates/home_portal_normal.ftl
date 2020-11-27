@@ -118,34 +118,42 @@
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
 	<script>
 		var settingsGetTracking = {
-			"url": "https://thongke.opencps.vn",
+			"url": "https://thongke.fds.vn",
 			"method": "GET",
 			"headers": {
 			},
 			"data": {
 				"module": "API",
 				"method": "Live.getCounters",
-				"idSite": "2",
+				"idSite": "3",
 				"lastMinutes": "1",
 				"format": "JSON",
 				"token_auth": "88f691fc0e327c1f67866138f3675e24"
 			}
 		};
 		var getTracking = function () {
-			$.ajax(settingsGetTracking ).done(function (response) {
-				if (response && response[0] && response[0].hasOwnProperty('visitors')) {
-					$("#counterVisitor").html(response[0]['visitors'])
+			// $.ajax(settingsGetTracking ).done(function (response) {
+			// 	if (response && response[0] && response[0].hasOwnProperty('visitors')) {
+			// 		$("#counterVisitor").html(response[0]['visitors'])
+			// 	}
+			// }).fail(function(jqXHR, textStatus, errorThrown) {
+			// });
+			// 
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.addEventListener("readystatechange", function() {
+				try {
+					$("#counterVisitor").html(JSON.parse(this.responseText)[0]['visitors'])
+				} catch (error) {
 				}
-				// setTimeout (function () {
-				// 	getTracking()
-				// }, 5000)
-			}).fail(function(jqXHR, textStatus, errorThrown) {
-				// setTimeout (function () {
-				// 	getTracking()
-				// }, 5000)
 			});
+			xhr.open("GET", "https://thongke.fds.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=88f691fc0e327c1f67866138f3675e24")
+			xhr.send()
 		}
-		getTracking()
+		setTimeout(function () {
+			getTracking()
+		}, 500)
+		
 	</script>
 	<script>
 		$(document).ready(function() {
