@@ -18,12 +18,15 @@
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=831883128" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=9831233128" rel="stylesheet" type="text/css">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8883128" rel="stylesheet" type="text/css">
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123331221" rel="stylesheet">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789312987" rel="stylesheet">
-
+	<!--  -->
+	<link href="${themeDisplay.getPathThemeRoot()}/css/toolbar.css?t=789312393817" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/pdf_viewer.css?t=789313321987" rel="stylesheet" type="text/css">
+	<!--  -->
 	<script>
         window.__define = window.define;
         window.__require = window.require;
@@ -44,14 +47,35 @@
 	<script src="${themeDisplay.getPathThemeRoot()}/js/svg-pan-zoom.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/date-time-picker.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/mermaid.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/vgcaplugin.js"></script>
 	<script src="https://sp.zalo.me/plugins/sdk.js"></script>
+	<!-- pdf editor -->
+	<script src="${themeDisplay.getPathThemeRoot()}/js/pdf-ann.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/pdf_viewer.js?t=98312412"></script>
 	
+	<!--  -->
 	<script>
+		var activePdfEditor = true;
         window.define = window.__define;
         window.require = window.__require;
         window.__define = undefined;
         window.__require = undefined;
-    </script>
+	</script>
+	<!-- Begin Tracking OpenCps -->
+	<script type="text/javascript">
+		var _paq = window._paq = window._paq || [];
+		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function() {
+		  var u="//thongke.opencps.vn/";
+		  _paq.push(['setTrackerUrl', u+'matomo.php']);
+		  _paq.push(['setSiteId', '4']);
+		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+		})();
+	</script>
+	<!-- End Tracking OpenCps -->
 </head>
 
 <body class="${css_class} mBody page-theme">
@@ -138,6 +162,15 @@
 						</div>
 					</div>
 				</div>
+				<div style="
+					display: inline-block;
+					position: absolute;
+					right: 10px;
+					bottom: 10px;
+				">
+					Đang truy cập:&nbsp;
+					<span id="counterVisitor" class="">0</span>
+				</div>
 			</div>
 		</footer>	
 	</div>
@@ -148,14 +181,46 @@
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script>
+		var settingsGetTracking = {
+			"url": "https://thongke.fds.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "4",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "ee21ce435c81d3d3696d5203d7b8b844"
+			}
+		};
+		var getTracking = function () {
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.addEventListener("readystatechange", function() {
+				try {
+					$("#counterVisitor").html(JSON.parse(this.responseText)[0]['visitors'])
+				} catch (error) {
+				}
+			});
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=4&lastMinutes=3&format=JSON&token_auth=ee21ce435c81d3d3696d5203d7b8b844")
+			xhr.send()
+		}
+		setTimeout(function () {
+			getTracking()
+		}, 500)
+		
+	</script>
 	<#if permissionChecker.isOmniadmin()>
 		<@liferay_util["include"] page=body_bottom_include />
 		<@liferay_util["include"] page=bottom_include />
 	</#if>
 	<!-- endinject -->
+	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}/js/annotation-index.js?t=1923812321"></script>
 	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}/js/pdf.js?t=9991"></script>
 	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}/js/pdf-table-extractor.js?t=9991"></script>
-
 	<script type="text/javascript">		
 		$(document).ready(function() {
 			$("#navigation .nav-toggle").on('click', function(e) {
@@ -683,6 +748,53 @@
 		
 		body.page-theme .deactive__btn {
 			background-color: #0d7535 !important;
+		}
+		/* pdf editor */
+		#pdf-annotate-text-input, #pdf-annotate-point-input {
+			z-index: 203123123123123123 !important;
+			height: 26px;
+			min-width: 200px;
+		}
+		select.text-size, select.pen-size, select.scale{
+			-webkit-writing-mode: horizontal-tb !important;
+			text-rendering: auto;
+			color: -internal-light-dark(black, white);
+			letter-spacing: normal;
+			word-spacing: normal;
+			text-transform: none;
+			text-indent: 0px;
+			text-shadow: none;
+			display: inline-block;
+			text-align: start;
+			appearance: menulist;
+			box-sizing: border-box;
+			align-items: center;
+			white-space: pre;
+			-webkit-rtl-ordering: logical;
+			background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+			cursor: default;
+			margin: 0em;
+			font: 400 13.3333px Arial;
+			border-radius: 0px;
+			border-width: 1px;
+			border-style: solid;
+			border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+			border-image: initial;
+			border-radius: 3px;
+			height: 22px;
+		}
+		.text-color a, .pen-color a {
+			background: rgb(0, 0, 0);
+			border-radius: 5px;
+			width: 20px;
+			height: 20px;
+		}
+		.rotate-ccw, .rotate-cw {
+			font-size: 18px;
+			font-weight: 700;
+		}
+		.toolbar button {
+			background-color: transparent !important;
 		}
 	</style>
 	

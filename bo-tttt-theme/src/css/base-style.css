@@ -12,6 +12,7 @@ body a, body a:hover, body a:focus {
 body {
 	font-family: 'Roboto', sans-serif;
 	font-size: 14px;
+	margin: 0 !important;
 }
 
 @media screen and (min-width: 1360px) {
@@ -305,5 +306,35 @@ body .bth {
 	display: none !important;
   }
 
-
+#pdf-annotate-text-input, #pdf-annotate-point-input {
+  z-index: 203123123123123123 !important;
+  height: 26px;
+  min-width: 200px;
+}
+select.text-size, select.pen-size{
+  -webkit-writing-mode: horizontal-tb !important;
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: menulist;
+  box-sizing: border-box;
+  align-items: center;
+  white-space: pre;
+  -webkit-rtl-ordering: logical;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  cursor: default;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  border-radius: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+}
 /*---------- Login ----------*/

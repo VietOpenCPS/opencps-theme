@@ -31,7 +31,21 @@
         window.define = undefined;
         window.require = undefined;
     </script>
-	
+	<!-- Begin Tracking OpenCps -->
+	<script type="text/javascript">
+		var _paq = window._paq = window._paq || [];
+		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function() {
+		  var u="//thongke.opencps.vn/";
+		  _paq.push(['setTrackerUrl', u+'matomo.php']);
+		  _paq.push(['setSiteId', '4']);
+		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+		})();
+	</script>
+	<!-- End Tracking OpenCps -->
 	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js"></script>
 	
 	<script>
@@ -126,6 +140,15 @@
 						</div>
 					</div>
 				</div>
+				<div style="
+					display: inline-block;
+					position: absolute;
+					right: 10px;
+					bottom: 10px;
+				">
+					Đang truy cập:&nbsp;
+					<span id="counterVisitor" class="">0</span>
+				</div>
 			</div>
 		</footer>	
 	</div>
@@ -133,6 +156,38 @@
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script>
+		var settingsGetTracking = {
+			"url": "https://thongke.fds.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "4",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "ee21ce435c81d3d3696d5203d7b8b844"
+			}
+		};
+		var getTracking = function () {
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.addEventListener("readystatechange", function() {
+				try {
+					$("#counterVisitor").html(JSON.parse(this.responseText)[0]['visitors'])
+				} catch (error) {
+				}
+			});
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=4&lastMinutes=3&format=JSON&token_auth=ee21ce435c81d3d3696d5203d7b8b844")
+			xhr.send()
+		}
+		setTimeout(function () {
+			getTracking()
+		}, 500)
+		
+	</script>
 	<script>
 		$(document).ready(function() {
 			$("#navigation .nav-toggle").on('click', function(e) {

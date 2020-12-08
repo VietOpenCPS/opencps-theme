@@ -132,13 +132,6 @@
 			}
 		};
 		var getTracking = function () {
-			// $.ajax(settingsGetTracking ).done(function (response) {
-			// 	if (response && response[0] && response[0].hasOwnProperty('visitors')) {
-			// 		$("#counterVisitor").html(response[0]['visitors'])
-			// 	}
-			// }).fail(function(jqXHR, textStatus, errorThrown) {
-			// });
-			// 
 			var xhr = new XMLHttpRequest();
 			xhr.withCredentials = true;
 			xhr.addEventListener("readystatechange", function() {
