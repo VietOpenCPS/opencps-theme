@@ -47,14 +47,30 @@
 	<script src="${themeDisplay.getPathThemeRoot()}/js/date-time-picker.js?t=8888"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/mermaid.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/vgcaplugin.js"></script>
-	
+	<script src="${themeDisplay.getPathThemeRoot()}/js/function-vtca.min.js"></script>
+
 	<script>
         window.define = window.__define;
         window.require = window.__require;
         window.__define = undefined;
         window.__require = undefined;
     </script>
-	
+	<!-- Begin Tracking OpenCps -->
+	<script type="text/javascript">
+		var _paq = window._paq = window._paq || [];
+		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function() {
+		  var u="//thongke.opencps.vn/";
+		  _paq.push(['setTrackerUrl', u+'matomo.php']);
+		  _paq.push(['setSiteId', '5']);
+		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+		})();
+	</script>
+	<!-- End Tracking OpenCps -->
+
 	<!-- Begin EMC Tracking Code -->
     <script type="text/javascript">
         var _govaq = window._govaq || [];
@@ -146,6 +162,44 @@
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script>
+		var settingsGetTracking = {
+			"url": "https://thongke.opencps.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "6",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "1811b03abf29e86ee2532678d70b31b0"
+			}
+		};
+		var getTracking = function () {
+			// $.ajax(settingsGetTracking ).done(function (response) {
+			// 	if (response && response[0] && response[0].hasOwnProperty('visitors')) {
+			// 		$("#counterVisitor").html(response[0]['visitors'])
+			// 	}
+			// }).fail(function(jqXHR, textStatus, errorThrown) {
+			// });
+			// 
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.addEventListener("readystatechange", function() {
+				try {
+					$("#counterVisitor").html(JSON.parse(this.responseText)[0]['visitors'])
+				} catch (error) {
+				}
+			});
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=6&lastMinutes=3&format=JSON&token_auth=1811b03abf29e86ee2532678d70b31b0")
+			xhr.send()
+		}
+		setTimeout(function () {
+			getTracking()
+		}, 500)
+	</script>
 	<#if permissionChecker.isOmniadmin()>
 		<@liferay_util["include"] page=body_bottom_include />
 		<@liferay_util["include"] page=bottom_include />

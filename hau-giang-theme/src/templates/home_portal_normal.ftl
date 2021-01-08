@@ -118,7 +118,7 @@
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
 	<script>
 		var settingsGetTracking = {
-			"url": "https://thongke.fds.vn",
+			"url": "https://thongke.opencps.vn",
 			"method": "GET",
 			"headers": {
 			},
@@ -140,7 +140,7 @@
 				} catch (error) {
 				}
 			});
-			xhr.open("GET", "https://thongke.fds.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=88f691fc0e327c1f67866138f3675e24")
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=88f691fc0e327c1f67866138f3675e24")
 			xhr.send()
 		}
 		setTimeout(function () {

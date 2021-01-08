@@ -158,7 +158,7 @@
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
 	<script>
 		var settingsGetTracking = {
-			"url": "https://thongke.fds.vn",
+			"url": "https://thongke.opencps.vn",
 			"method": "GET",
 			"headers": {
 			},

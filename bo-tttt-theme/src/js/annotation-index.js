@@ -125,7 +125,7 @@
 	      size.appendChild(new Option(s, s));
 	    });
 
-	    setText(localStorage.getItem(RENDER_OPTIONS.documentId + '/text/size') || 10, localStorage.getItem(RENDER_OPTIONS.documentId + '/text/color') || '#000000');
+	    setText(localStorage.getItem(RENDER_OPTIONS.documentId + '/text/size') || 14, localStorage.getItem(RENDER_OPTIONS.documentId + '/text/color') || '#EF4437');
 
 	    (0, _initColorPicker2.default)(document.querySelector('.text-color'), textColor, function (value) {
 	      setText(textSize, value);
@@ -185,7 +185,7 @@
 	      size.appendChild(new Option(i + 1, i + 1));
 	    }
 
-	    setPen(localStorage.getItem(RENDER_OPTIONS.documentId + '/pen/size') || 1, localStorage.getItem(RENDER_OPTIONS.documentId + '/pen/color') || '#000000');
+	    setPen(localStorage.getItem(RENDER_OPTIONS.documentId + '/pen/size') || 1, localStorage.getItem(RENDER_OPTIONS.documentId + '/pen/color') || '#EF4437');
 
 	    (0, _initColorPicker2.default)(document.querySelector('.pen-color'), penColor, function (value) {
 	      setPen(penSize, value);
@@ -2322,7 +2322,7 @@
 		 * Handle document.mouseup event
 		 *
 		 * @param {Event} e The DOM event to handle
-		 */function handleDocumentMouseup(e){if(input||!(0,_utils.findSVGAtPoint)(e.clientX,e.clientY)){return;}input=document.createElement('input');input.setAttribute('id','pdf-annotate-text-input');input.setAttribute('placeholder','Nhập nội dung');input.style.border='3px solid '+_utils.BORDER_COLOR;input.style.borderRadius='3px';input.style.position='absolute';input.style.top=e.clientY +'px';input.style.left=e.clientX+'px';input.style.fontSize=_textSize+'px';input.addEventListener('blur',handleInputBlur);input.addEventListener('keyup',handleInputKeyup);document.body.appendChild(input);input.focus();}/**
+		 */function handleDocumentMouseup(e){if(input||!(0,_utils.findSVGAtPoint)(e.clientX,e.clientY)){return;}input=document.createElement('input');input.setAttribute('id','pdf-annotate-text-input');input.setAttribute('placeholder','Nhập nội dung');input.style.border='3px solid '+_utils.BORDER_COLOR;input.style.position='absolute';input.style.top=e.clientY +'px';input.style.left=e.clientX+'px';input.style.fontSize=_textSize+'px';input.addEventListener('blur',handleInputBlur);input.addEventListener('keyup',handleInputKeyup);document.body.appendChild(input);input.focus();}/**
 		 * Handle input.blur event
 		 */function handleInputBlur(){saveText();}/**
 		 * Handle input.keyup event
@@ -2413,7 +2413,7 @@
 	});
 	exports.default = initColorPicker;
 	// Color picker component
-	var COLORS = [{ hex: '#000000', name: 'Black' }, { hex: '#EF4437', name: 'Red' }, { hex: '#E71F63', name: 'Pink' }, { hex: '#8F3E97', name: 'Purple' }, { hex: '#65499D', name: 'Deep Purple' }, { hex: '#4554A4', name: 'Indigo' }, { hex: '#2083C5', name: 'Blue' }, { hex: '#35A4DC', name: 'Light Blue' }, { hex: '#09BCD3', name: 'Cyan' }, { hex: '#009688', name: 'Teal' }, { hex: '#43A047', name: 'Green' }, { hex: '#8BC34A', name: 'Light Green' }, { hex: '#FDC010', name: 'Yellow' }, { hex: '#F8971C', name: 'Orange' }, { hex: '#F0592B', name: 'Deep Orange' }, { hex: '#F06291', name: 'Light Pink' }];
+	var COLORS = [{ hex: '#EF4437', name: 'Red' }, { hex: '#000000', name: 'Black' }, { hex: '#E71F63', name: 'Pink' }, { hex: '#8F3E97', name: 'Purple' }, { hex: '#65499D', name: 'Deep Purple' }, { hex: '#4554A4', name: 'Indigo' }, { hex: '#2083C5', name: 'Blue' }, { hex: '#35A4DC', name: 'Light Blue' }, { hex: '#09BCD3', name: 'Cyan' }, { hex: '#009688', name: 'Teal' }, { hex: '#43A047', name: 'Green' }, { hex: '#8BC34A', name: 'Light Green' }, { hex: '#FDC010', name: 'Yellow' }, { hex: '#F8971C', name: 'Orange' }, { hex: '#F0592B', name: 'Deep Orange' }, { hex: '#F06291', name: 'Light Pink' }];
 
 	function initColorPicker(el, value, onChange) {
 	  function setColor(value) {

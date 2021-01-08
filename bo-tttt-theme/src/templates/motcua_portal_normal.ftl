@@ -183,7 +183,7 @@
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
 	<script>
 		var settingsGetTracking = {
-			"url": "https://thongke.fds.vn",
+			"url": "https://thongke.opencps.vn",
 			"method": "GET",
 			"headers": {
 			},
@@ -218,7 +218,7 @@
 		<@liferay_util["include"] page=bottom_include />
 	</#if>
 	<!-- endinject -->
-	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}/js/annotation-index.js?t=1923812321"></script>
+	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}/js/annotation-index.js?t=31923812321"></script>
 	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}/js/pdf.js?t=9991"></script>
 	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}/js/pdf-table-extractor.js?t=9991"></script>
 	<script type="text/javascript">		
@@ -753,7 +753,13 @@
 		#pdf-annotate-text-input, #pdf-annotate-point-input {
 			z-index: 203123123123123123 !important;
 			height: 26px;
-			min-width: 200px;
+			min-width: 300px;
+			border-top: none !important;
+			border-left: none !important;
+			border-right: none !important;
+		}
+		#pdf-annotate-text-input:focus {
+			outline: none;
 		}
 		select.text-size, select.pen-size, select.scale{
 			-webkit-writing-mode: horizontal-tb !important;
