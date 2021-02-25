@@ -132,8 +132,8 @@
 	<a href="/web/bo-quoc-phong" class="bth"><i class="fa fa-home" aria-hidden="true"></i></a>
 		
 	<!-- inject:js -->
-	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
-	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>	
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js?t=98312"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js?t=98312"></script>	
 	<#if permissionChecker.isOmniadmin()>
 		<@liferay_util["include"] page=body_bottom_include />
 		<@liferay_util["include"] page=bottom_include />
@@ -149,7 +149,7 @@
 				$(this).next().slideToggle();
 			});
 		
-			$(".header_login .logo > img").attr("src","o/bo-quocphong-theme/images/logo-login-dvc.png");
+			$(".login-dvc .header_login .logo > img").attr("src","o/bo-quocphong-theme/images/logo-login-dvc.png");
 			
 			//$(".body_login .header_login + div").append("<div class='temp-footer'><p>Địa chỉ: Số 1B, Nguyễn Tri Phương, quận Ba Đình, thành phố Hà Nội</p><p>Điện thoại: 069.553215</p><p>Thư điện tử: info@mod.gov.vn</p></div>");
 			

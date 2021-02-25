@@ -117,8 +117,8 @@
 		</footer>
 	</div>
 	
-	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
-	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js?t=98312"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js?4123123"></script>
 
 	<style>
 		#react-root .application--wrap {

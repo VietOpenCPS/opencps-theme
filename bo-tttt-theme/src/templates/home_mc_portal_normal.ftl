@@ -19,11 +19,11 @@
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8888" rel="stylesheet" type="text/css">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=81312888" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8831288" rel="stylesheet" type="text/css">
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=12331321" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=7821993187" rel="stylesheet">
 	
 	<script>
         window.__define = window.define;
@@ -33,7 +33,21 @@
     </script>
 	
 	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js"></script>
-	
+	<!-- Begin Tracking OpenCps -->
+	<script type="text/javascript">
+		var _paq = window._paq = window._paq || [];
+		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function() {
+		  var u="//thongke.opencps.vn/";
+		  _paq.push(['setTrackerUrl', u+'matomo.php']);
+		  _paq.push(['setSiteId', '4']);
+		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+		})();
+	</script>
+	<!-- End Tracking OpenCps -->
 	<script>
         window.define = window.__define;
         window.require = window.__require;
@@ -97,41 +111,83 @@
 						<img src="${themeDisplay.getPathThemeRoot()}/images/logo-bo4t.png">
 						<div class="owner-info">
 							<label>CƠ QUAN CHỦ QUẢN: BỘ THÔNG TIN VÀ TRUYỀN THÔNG (MIC)</label>
-							<span>Giấy phép thiết lập Trang thông tin điện tử số 18/GP-TTĐT do Cục Quản lý Phát thanh, Truyền hình và Thông tin điện tử cấp ngày 15/03/2016</span>
-							<span>Chịu trách nhiệm chính: Ông Võ Quốc Trường - Giám đốc Trung tâm Thông tin - Bộ Thông tin và Truyền thông</span>
+							<label>Bộ phận hỗ trợ: Trung tâm CNTT</label>
+							<span><i class="fa fa-phone"></i>&nbsp;024.3556 3462</span>
+							<span><i class="fa fa-envelope-o"></i>&nbsp;hotromcdt@mic.gov.vn</span>
 						</div>
 					</div>
 				</div>
 				<div class="info-right">
 					<div class="">
-						<div class="box-left">
+						<!-- <div class="box-left">
 							<label>Bộ phận tiếp nhận phản ánh kiến nghị</label>
 							<span><i class="fa fa-phone"></i>024.3944 8539</span>
 							<span><i class="fa fa-envelope-o"></i>thutuchanhchinh@mic.gov.vn</span>
-						</div>
-						<div class="box-right">
+						</div> -->
+						<!-- <div class="box-right">
 							<label>Bộ phận hỗ trợ</label>
 							<span><i class="fa fa-phone"></i>024.3556 3462</span>
 							<span><i class="fa fa-envelope-o"></i>hotrodvc@mic.gov.vn</span>
-						</div>
+						</div> -->
 					</div>
-					<div class="other-info">
-						<div class="statistics">
+					<div class="other-info right">
+						<!-- <div class="statistics">
 							<span>Số người truy cập:</span> <b>0</b>
-						</div>
+						</div> -->
 						<div class="logos-wrapper">
 							<img src="${themeDisplay.getPathThemeRoot()}/images/logo-cmc.png">
 							<img src="${themeDisplay.getPathThemeRoot()}/images/logo-opencps.png">
 						</div>
 					</div>
 				</div>
+				<div style="
+					display: inline-block;
+					position: absolute;
+					right: 10px;
+					bottom: 10px;
+				">
+					Đang truy cập:&nbsp;
+					<span id="counterVisitor" class="">0</span>
+				</div>
 			</div>
-		</footer>
+		</footer>	
 	</div>
 	
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script>
+		var settingsGetTracking = {
+			"url": "https://thongke.opencps.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "4",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "ee21ce435c81d3d3696d5203d7b8b844"
+			}
+		};
+		var getTracking = function () {
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.addEventListener("readystatechange", function() {
+				try {
+					$("#counterVisitor").html(JSON.parse(this.responseText)[0]['visitors'])
+				} catch (error) {
+				}
+			});
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=4&lastMinutes=3&format=JSON&token_auth=ee21ce435c81d3d3696d5203d7b8b844")
+			xhr.send()
+		}
+		setTimeout(function () {
+			getTracking()
+		}, 500)
+		
+	</script>
 	<script>
 		$(document).ready(function() {
 			$("#navigation .nav-toggle").on('click', function(e) {

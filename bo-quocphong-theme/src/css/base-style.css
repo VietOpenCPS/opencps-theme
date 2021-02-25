@@ -318,3 +318,6 @@ body .bth {
 	right: auto;
 	left: 30px;
 }
+.alert.alert-info {
+	display: none !important;
+}

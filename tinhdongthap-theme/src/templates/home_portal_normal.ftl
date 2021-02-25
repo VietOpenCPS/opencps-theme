@@ -18,7 +18,7 @@
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8888" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8283188" rel="stylesheet" type="text/css">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888" rel="stylesheet" type="text/css">
 	
 	<script>
@@ -47,7 +47,7 @@
 	_govaq.push(['enableLinkTracking']);
 	(function () {
 		_govaq.push(['setTrackerUrl', 'https://f-emc.ngsp.gov.vn/tracking']);
-		_govaq.push(['setSiteId', '33']);
+		_govaq.push(['setSiteId', '163']);
 		var d = document,
 			g = d.createElement('script'),
 			s = d.getElementsByTagName('script')[0];
@@ -113,7 +113,40 @@
 			</p>
 		</footer>
 	</div>
-
+	<!-- inject thong-ke-truy-cap -->
+	<script>
+		var settingsGetTracking = {
+			"url": "https://thongke.opencps.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "6",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "1811b03abf29e86ee2532678d70b31b0"
+			}
+		};
+		var getTracking = function () {
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.addEventListener("readystatechange", function() {
+				try {
+					$("#counterVisitor").html(JSON.parse(this.responseText)[0]['visitors'])
+				} catch (error) {
+				}
+			});
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=6&lastMinutes=3&format=JSON&token_auth=1811b03abf29e86ee2532678d70b31b0")
+			xhr.send()
+		}
+		setTimeout(function () {
+			getTracking()
+		}, 500)
+		
+	</script>
+	<!--  -->
 	<style>
 		html {
 			overflow: auto;

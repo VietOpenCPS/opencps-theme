@@ -31,7 +31,47 @@
     })();
     </script>
 	<!-- End Gov Tracking Code -->
-
+	
+	<!-- Config Scope -->
+	<script type="text/javascript">
+		var activeChangePass = false; /* disable change password employee*/
+		var requiredOptionConfig = {
+			applicantIdNo: false,
+			applicantName: false,
+			address: false,
+			cityCode: false,
+			districtCode: false,
+			wardCode: false,
+			contactTelNo: false,
+			contactEmail: false,
+			delegateIdNo: false,
+			delegateName: false,
+			delegateAddress: false,
+			delegateCityCode: false,
+			delegateDistrictCode: false,
+			delegateWardCode: false,
+			delegateTelNo: false,
+			delegateEmail: false
+		}; /*cấu hình bắt buộc thông tin chủ hồ sơ*/
+		var applicantSameDelegate = false; /*Tự động check thông tin người nộp giống thông tin chủ hồ sơ*/
+		var showTinhPhi = true; /*show tính phí dịch vụ chuyển phát*/
+		var hasOrganization = false; /*loại người dùng tách "Tổ chức" riêng*/
+		var applicantConfig = false; /*bind applicant từ danh sách applicant*/
+		var notifyConfig = false; /*lựa chọn hình thức gửi thông báo*/
+		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
+		var defaultCityName = false; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
+		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
+		var showKySoDvc = false; /*sử dụng ký số phía cổng DVC*/
+		var hasPreviewSync = false; /*in tiến trình xử lý hs*/
+		var thanhToanChuyenKhoan = true; /*sử dụng thanh toán chuyển khoản*/
+		var thaoTacUyQuyen = false; /*sử dụng chức năng ủy quyền xử lý hs*/
+		var hasDownloadAllFile = false; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
+		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
+		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
+		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+	</script>
+	<!-- end -->
 	<base href="/">
 
 	<@liferay_util["include"] page=top_head_include />
@@ -198,23 +238,23 @@
 			});
 			
 			//Back to top
-			<!-- var offset = 300, -->
-				<!-- scroll_top_duration = 600; -->
-				<!-- $back_to_top = $('.btt'); -->
-				<!-- $back_to_home = $('.bth'); -->
+			// <!-- var offset = 300, -->
+			// 	<!-- scroll_top_duration = 600; -->
+			// 	<!-- $back_to_top = $('.btt'); -->
+			// 	<!-- $back_to_home = $('.bth'); -->
 				
-			<!-- $(window).scroll(function(){ -->
-				<!-- ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('btt-is-visible') : $back_to_top.removeClass('btt-is-visible'); -->
-				<!-- ( $(this).scrollTop() > offset ) ? $back_to_home.addClass('btt-is-visible') : $back_to_home.removeClass('btt-is-visible'); -->
-			<!-- }); -->
-			//Smooth scroll to top
-			<!-- $back_to_top.on('click', function(event){ -->
-				<!-- event.preventDefault(); -->
-				<!-- $('body,html').animate({ -->
-					<!-- scrollTop: 0 , -->
-					<!-- }, scroll_top_duration -->
-				<!-- ); -->
-			<!-- }); -->
+			// <!-- $(window).scroll(function(){ -->
+			// 	<!-- ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('btt-is-visible') : $back_to_top.removeClass('btt-is-visible'); -->
+			// 	<!-- ( $(this).scrollTop() > offset ) ? $back_to_home.addClass('btt-is-visible') : $back_to_home.removeClass('btt-is-visible'); -->
+			// <!-- }); -->
+			// //Smooth scroll to top
+			// <!-- $back_to_top.on('click', function(event){ -->
+			// 	<!-- event.preventDefault(); -->
+			// 	<!-- $('body,html').animate({ -->
+			// 		<!-- scrollTop: 0 , -->
+			// 		<!-- }, scroll_top_duration -->
+			// 	<!-- ); -->
+			// <!-- }); -->
 		});
 	</script>
 

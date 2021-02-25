@@ -513,3 +513,9 @@ body .v-dialog .v-toolbar .v-toolbar__content {
     height: 40px !important;
     background-color: #0167d3;
 }
+.phancong .v-input__slot {
+    margin-bottom: 0px !important;
+}
+#mermaid_dossier #theGraph {
+    height: 350px;
+}

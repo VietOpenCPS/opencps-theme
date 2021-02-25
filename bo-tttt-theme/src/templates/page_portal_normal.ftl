@@ -18,11 +18,11 @@
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8888" rel="stylesheet" type="text/css">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=883412388" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=883128318" rel="stylesheet" type="text/css">
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123123321" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789312987" rel="stylesheet">
 
 	<script>
         window.__define = window.define;
@@ -44,6 +44,7 @@
 	<script src="${themeDisplay.getPathThemeRoot()}/js/svg-pan-zoom.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/date-time-picker.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/mermaid.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/vgcaplugin.js"></script>
 	<script src="https://sp.zalo.me/plugins/sdk.js"></script>
 	
 	<script>
@@ -109,28 +110,29 @@
 						<img src="${themeDisplay.getPathThemeRoot()}/images/logo-bo4t.png">
 						<div class="owner-info">
 							<label>CƠ QUAN CHỦ QUẢN: BỘ THÔNG TIN VÀ TRUYỀN THÔNG (MIC)</label>
-							<span>Giấy phép thiết lập Trang thông tin điện tử số 18/GP-TTĐT do Cục Quản lý Phát thanh, Truyền hình và Thông tin điện tử cấp ngày 15/03/2016</span>
-							<span>Chịu trách nhiệm chính: Ông Võ Quốc Trường - Giám đốc Trung tâm Thông tin - Bộ Thông tin và Truyền thông</span>
+							<label>Bộ phận hỗ trợ: Trung tâm CNTT</label>
+							<span><i class="fa fa-phone"></i>&nbsp;024.3556 3462</span>
+							<span><i class="fa fa-envelope-o"></i>&nbsp;hotromcdt@mic.gov.vn</span>
 						</div>
 					</div>
 				</div>
 				<div class="info-right">
 					<div class="">
-						<div class="box-left">
+						<!-- <div class="box-left">
 							<label>Bộ phận tiếp nhận phản ánh kiến nghị</label>
 							<span><i class="fa fa-phone"></i>024.3944 8539</span>
 							<span><i class="fa fa-envelope-o"></i>thutuchanhchinh@mic.gov.vn</span>
-						</div>
-						<div class="box-right">
+						</div> -->
+						<!-- <div class="box-right">
 							<label>Bộ phận hỗ trợ</label>
 							<span><i class="fa fa-phone"></i>024.3556 3462</span>
 							<span><i class="fa fa-envelope-o"></i>hotrodvc@mic.gov.vn</span>
-						</div>
+						</div> -->
 					</div>
-					<div class="other-info">
-						<div class="statistics">
+					<div class="other-info right">
+						<!-- <div class="statistics">
 							<span>Số người truy cập:</span> <b>0</b>
-						</div>
+						</div> -->
 						<div class="logos-wrapper">
 							<img src="${themeDisplay.getPathThemeRoot()}/images/logo-cmc.png">
 							<img src="${themeDisplay.getPathThemeRoot()}/images/logo-opencps.png">
@@ -138,7 +140,7 @@
 					</div>
 				</div>
 			</div>
-		</footer>
+		</footer>	
 	</div>
 	
 	<a href="" class="btt"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
@@ -558,9 +560,9 @@
 		.body_login .header_login + div .v-btn:hover .v-icon {
 			color: white !important;
 		}
-		.body_login .header_login + div .v-btn:last-child {
+		/* .body_login .header_login + div .v-btn:last-child {
 			display: none;
-		}
+		} */
 		.body_login .theme--light.v-sheet {
 			background-color: transparent !important;
 			border: 0 !important;

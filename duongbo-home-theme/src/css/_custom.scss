@@ -1,0 +1,137 @@
+body {
+	background: url("../images/bg-home.png") center center no-repeat;
+	background-size: cover;
+	font-family: 'Roboto', sans-serif;
+}
+
+#wrapper {
+	height: 100vh;
+}
+
+#footer {
+	background: url("../images/bg-footer.png") center center repeat-x;
+	background-size: auto 100%;
+	color: #15bfff;
+	border-top: 1px solid #031841;
+	padding: 10px 0;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+}
+#footer .container {
+	display: -webkit-box;
+	display: flex;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+#footer .sitename {
+	font-weight: bold;
+}
+#footer .manual {
+	background: url("../images/bg-button.png") center center repeat-x;
+	background-size: auto 100%;
+	color: #2a2a2a;
+	display: block;
+	padding: 5px 12px;
+	border-radius: 8px;
+	text-decoration: none;
+}
+
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ {
+	max-width: 350px;
+    margin: 50px auto 0;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ .portlet-content {
+	background: rgba(255,255,255,0.5);
+    border: 0;
+    border-radius: 10px;
+    padding: 20px 0 0;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ h2, 
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ .btn-sm:first-child {
+	display: none;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ .col-sm-6 {
+	width: 100%;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ input {
+    margin-bottom: 15px;
+    height: 36px;
+	color: white;
+	background-color: #69758c;
+	border: 0;
+	border-radius: 0;
+	padding-left: 45px;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:nth-child(2) {
+	padding: 0 20px;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:nth-child(2) .col-sm-6 > div {
+    position: relative;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:nth-child(2) .col-sm-6 > div:before {
+	content: "";
+	position: absolute;
+	width: 36px;
+	height: 100%;
+	background-color: #3563c1;
+	color: white;
+	top: 0;
+	left: 0;
+	font-family: FontAwesome;
+	font-size: 16px;
+	text-align: center;
+	line-height: 36px;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:nth-child(2) > .col-sm-6:first-child > div:before {
+	content: "\f007";
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:nth-child(2) > .col-sm-6:last-child > div:before {
+	content: "\f023";
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:last-child {
+    display: flex;
+    flex-wrap: wrap;
+	margin: 0;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:last-child > div:first-child {
+    order: 2;
+	padding: 0px 20px 15px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:last-child > div:first-child a {
+	color: white;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:last-child > div:last-child {
+    order: 1;
+	padding: 0 20px 15px;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ form > div:last-child > div:last-child button {
+    width: 100%;
+    color: white;
+    background-color: #3563c1;
+    font-size: 14px;
+	border-radius: 0;
+}
+
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ .notification-alert {
+	display: none;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ .account {
+	padding: 0 20px 20px;
+	display: -webkit-box;
+	display: flex;
+    -webkit-justify-content: center;
+	justify-content: center;
+	-webkit-align-items: center;
+	align-items: center;
+}
+.portlet-boundary_FrontendWebPortal_LoginPortlet_ img {
+	width: 50px;
+	height: 50px;
+	margin-right: 15px;
+}

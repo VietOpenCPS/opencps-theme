@@ -101,6 +101,14 @@
 				<p><b>Hướng dẫn Thủ tục hành chính:</b> 0293.3554567</p>
 				<div class="divide">|</div>
 				<p><b>Email:</b> dichvucong@haugiang.gov.vn</p>
+				<div style="
+					display: inline-block;
+					position: absolute;
+					right: 10px;
+				">
+					Đang truy cập:&nbsp;
+					<span id="counterVisitor" class="">0</span>
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -108,6 +116,38 @@
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script>
+		var settingsGetTracking = {
+			"url": "https://thongke.opencps.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "3",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "bc959a4604e178dd1cf61e5d9ab7b2b7"
+			}
+		};
+		var getTracking = function () {
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.addEventListener("readystatechange", function() {
+				try {
+					$("#counterVisitor").html(JSON.parse(this.responseText)[0]['visitors'])
+				} catch (error) {
+				}
+			});
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
+			xhr.send()
+		}
+		setTimeout(function () {
+			getTracking()
+		}, 500)
+		
+	</script>
 	<script>
 		$(document).ready(function() {
 			$("#navigation .nav-toggle").on('click', function(e) {

@@ -53,6 +53,22 @@
         window.__require = undefined;
     </script>
 	
+	<!-- Begin Tracking OpenCps -->
+	<script type="text/javascript">
+		var _paq = window._paq = window._paq || [];
+		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function() {
+		  var u="//thongke.opencps.vn/";
+		  _paq.push(['setTrackerUrl', u+'matomo.php']);
+		  _paq.push(['setSiteId', '3']);
+		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
+		})();
+	</script>
+	<!-- End Tracking OpenCps -->
+	
 	<!-- Begin Gov Tracking Code -->
 		<script type="text/javascript">
 			var _govaq = window._govaq || [];
@@ -60,7 +76,7 @@
 		_govaq.push(['enableLinkTracking']);
 		(function () {
 			_govaq.push(['setTrackerUrl', 'https://f-emc.ngsp.gov.vn/tracking']);
-			_govaq.push(['setSiteId', '94']);
+			_govaq.push(['setSiteId', '95']);
 			var d = document,
 				g = d.createElement('script'),
 				s = d.getElementsByTagName('script')[0];
@@ -72,6 +88,47 @@
 		})();
 		</script>
 	<!-- End Gov Tracking Code -->
+
+	<!-- Config Scope -->
+	<script type="text/javascript">
+		var activeChangePass = true; /* disable change password employee*/
+		var requiredOptionConfig = {
+			applicantIdNo: false,
+			applicantName: true,
+			address: true,
+			cityCode: true,
+			districtCode: true,
+			wardCode: true,
+			contactTelNo: false,
+			contactEmail: false,
+			delegateIdNo: false,
+			delegateName: false,
+			delegateAddress: false,
+			delegateCityCode: false,
+			delegateDistrictCode: false,
+			delegateWardCode: false,
+			delegateTelNo: false,
+			delegateEmail: false
+		}; /*cấu hình bắt buộc thông tin chủ hồ sơ*/
+		var applicantSameDelegate = false; /*Tự động check thông tin người nộp giống thông tin chủ hồ sơ*/
+		var showTinhPhi = false; /*show tính phí dịch vụ chuyển phát*/
+		var hasOrganization = false; /*loại người dùng tách "Tổ chức" riêng*/
+		var applicantConfig = true; /*bind applicant từ danh sách applicant*/
+		var notifyConfig = true; /*lựa chọn hình thức gửi thông báo*/
+		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
+		var defaultCityName = ""; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
+		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
+		var showKySoDvc = true; /*sử dụng ký số phía cổng DVC*/
+		var hasPreviewSync = true; /*in tiến trình xử lý hs*/
+		var thanhToanChuyenKhoan = false; /*sử dụng thanh toán chuyển khoản*/
+		var thaoTacUyQuyen = false; /*sử dụng chức năng ủy quyền xử lý hs*/
+		var hasDownloadAllFile = false; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
+		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
+		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
+		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+	</script>
+	<!-- end -->
 </head>
 
 <body class="${css_class} mBody page-theme">
@@ -134,6 +191,14 @@
 				<p><b>Hướng dẫn Thủ tục hành chính:</b> 0293.3554567</p>
 				<div class="divide">|</div>
 				<p><b>Email:</b> dichvucong@haugiang.gov.vn</p>
+				<div style="
+					display: inline-block;
+					position: absolute;
+					right: 10px;
+				">
+					Đang truy cập:&nbsp;
+					<span id="counterVisitor" class="">0</span>
+				</div>
 			</div>
 		</footer>
 	</div>
@@ -144,6 +209,44 @@
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script>
+		var settingsGetTracking = {
+			"url": "https://thongke.opencps.vn",
+			"method": "GET",
+			"headers": {
+			},
+			"data": {
+				"module": "API",
+				"method": "Live.getCounters",
+				"idSite": "3",
+				"lastMinutes": "1",
+				"format": "JSON",
+				"token_auth": "bc959a4604e178dd1cf61e5d9ab7b2b7"
+			}
+		};
+		var getTracking = function () {
+			// $.ajax(settingsGetTracking ).done(function (response) {
+			// 	if (response && response[0] && response[0].hasOwnProperty('visitors')) {
+			// 		$("#counterVisitor").html(response[0]['visitors'])
+			// 	}
+			// }).fail(function(jqXHR, textStatus, errorThrown) {
+			// });
+			// 
+			var xhr = new XMLHttpRequest();
+			xhr.withCredentials = true;
+			xhr.addEventListener("readystatechange", function() {
+				try {
+					$("#counterVisitor").html(JSON.parse(this.responseText)[0]['visitors'])
+				} catch (error) {
+				}
+			});
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
+			xhr.send()
+		}
+		setTimeout(function () {
+			getTracking()
+		}, 500)
+	</script>
 	<#if permissionChecker.isOmniadmin()>
 		<@liferay_util["include"] page=body_bottom_include />
 		<@liferay_util["include"] page=bottom_include />
