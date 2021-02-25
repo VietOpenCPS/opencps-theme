@@ -513,3 +513,6 @@ body .v-dialog .v-toolbar .v-toolbar__content {
     height: 40px !important;
     background-color: #00204a;
 }
+#mermaid_dossier #theGraph {
+    height: 350px;
+}

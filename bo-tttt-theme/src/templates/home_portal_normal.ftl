@@ -19,11 +19,11 @@
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8312888" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=18312888" rel="stylesheet" type="text/css">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8883128" rel="stylesheet" type="text/css">
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=7893112987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=78931122987" rel="stylesheet">
 	
 	<script>
         window.__define = window.define;

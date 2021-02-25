@@ -87,6 +87,47 @@
 	})();
 	</script>
 	<!-- End Gov Tracking Code -->
+
+	<!-- Config Scope -->
+	<script type="text/javascript">
+		var activeChangePass = true; /* disable change password employee*/
+		var requiredOptionConfig = {
+			applicantIdNo: false,
+			applicantName: true,
+			address: true,
+			cityCode: true,
+			districtCode: true,
+			wardCode: true,
+			contactTelNo: false,
+			contactEmail: false,
+			delegateIdNo: false,
+			delegateName: false,
+			delegateAddress: false,
+			delegateCityCode: false,
+			delegateDistrictCode: false,
+			delegateWardCode: false,
+			delegateTelNo: false,
+			delegateEmail: false
+		}; /*cấu hình bắt buộc thông tin chủ hồ sơ*/
+		var applicantSameDelegate = false; /*Tự động check thông tin người nộp giống thông tin chủ hồ sơ*/
+		var showTinhPhi = false; /*show tính phí dịch vụ chuyển phát*/
+		var hasOrganization = false; /*loại người dùng tách "Tổ chức" riêng*/
+		var applicantConfig = true; /*bind applicant từ danh sách applicant*/
+		var notifyConfig = true; /*lựa chọn hình thức gửi thông báo*/
+		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
+		var defaultCityName = ""; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
+		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
+		var showKySoDvc = true; /*sử dụng ký số phía cổng DVC*/
+		var hasPreviewSync = true; /*in tiến trình xử lý hs*/
+		var thanhToanChuyenKhoan = false; /*sử dụng thanh toán chuyển khoản*/
+		var thaoTacUyQuyen = false; /*sử dụng chức năng ủy quyền xử lý hs*/
+		var hasDownloadAllFile = false; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
+		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
+		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
+		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+	</script>
+	<!-- end -->
 </head>
 
 <body class="${css_class} mBody page-theme">
@@ -176,7 +217,7 @@
 				"idSite": "3",
 				"lastMinutes": "1",
 				"format": "JSON",
-				"token_auth": "88f691fc0e327c1f67866138f3675e24"
+				"token_auth": "bc959a4604e178dd1cf61e5d9ab7b2b7"
 			}
 		};
 		var getTracking = function () {
@@ -195,7 +236,7 @@
 				} catch (error) {
 				}
 			});
-			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=88f691fc0e327c1f67866138f3675e24")
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
 			xhr.send()
 		}
 		setTimeout(function () {

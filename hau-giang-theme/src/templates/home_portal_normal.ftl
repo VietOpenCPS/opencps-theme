@@ -128,7 +128,7 @@
 				"idSite": "3",
 				"lastMinutes": "1",
 				"format": "JSON",
-				"token_auth": "88f691fc0e327c1f67866138f3675e24"
+				"token_auth": "bc959a4604e178dd1cf61e5d9ab7b2b7"
 			}
 		};
 		var getTracking = function () {
@@ -140,7 +140,7 @@
 				} catch (error) {
 				}
 			});
-			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=88f691fc0e327c1f67866138f3675e24")
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
 			xhr.send()
 		}
 		setTimeout(function () {

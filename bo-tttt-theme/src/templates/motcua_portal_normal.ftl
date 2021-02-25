@@ -18,11 +18,11 @@
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=9831233128" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=19831233128" rel="stylesheet" type="text/css">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8883128" rel="stylesheet" type="text/css">
 	<link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123331221" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=7819312987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=78129312987" rel="stylesheet">
 	<!--  -->
 	<link href="${themeDisplay.getPathThemeRoot()}/css/toolbar.css?t=789312393817" rel="stylesheet" type="text/css">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/pdf_viewer.css?t=789313321987" rel="stylesheet" type="text/css">
@@ -31,7 +31,8 @@
         window.__define = window.define;
         window.__require = window.require;
         window.define = undefined;
-        window.require = undefined;
+		window.require = undefined;
+		var hasVerification = true
     </script>
 	
 	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js"></script>
@@ -56,6 +57,7 @@
 	<!--  -->
 	<script>
 		var activePdfEditor = true;
+		var viTriLuuTru = true;
         window.define = window.__define;
         window.require = window.__require;
         window.__define = undefined;

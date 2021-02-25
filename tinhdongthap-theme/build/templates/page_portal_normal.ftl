@@ -23,7 +23,7 @@
 	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888" rel="stylesheet" type="text/css">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=1789987" rel="stylesheet">
 
 	<script>
         window.__define = window.define;
@@ -64,7 +64,7 @@
 		(function() {
 		  var u="//thongke.opencps.vn/";
 		  _paq.push(['setTrackerUrl', u+'matomo.php']);
-		  _paq.push(['setSiteId', '5']);
+		  _paq.push(['setSiteId', '6']);
 		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 		})();
@@ -90,6 +90,47 @@
 		})();
 	</script>
 	<!-- End EMC Tracking Code -->
+
+	<!-- Config Scope -->
+	<script type="text/javascript">
+		var activeChangePass = true; /* disable change password employee*/
+		var requiredOptionConfig = {
+			applicantIdNo: true,
+			applicantName: true,
+			address: true,
+			cityCode: true,
+			districtCode: true,
+			wardCode: true,
+			contactTelNo: true,
+			contactEmail: false,
+			delegateIdNo: true,
+			delegateName: true,
+			delegateAddress: true,
+			delegateCityCode: true,
+			delegateDistrictCode: true,
+			delegateWardCode: true,
+			delegateTelNo: true,
+			delegateEmail: false
+		}; /*cấu hình bắt buộc thông tin chủ hồ sơ*/
+		var applicantSameDelegate = true; /*Tự động check thông tin người nộp giống thông tin chủ hồ sơ*/
+		var showTinhPhi = false; /*show tính phí dịch vụ chuyển phát*/
+		var hasOrganization = true; /*loại người dùng tách "Tổ chức" riêng*/
+		var applicantConfig = false; /*bind applicant từ danh sách applicant*/
+		var notifyConfig = true; /*lựa chọn hình thức gửi thông báo*/
+		var defaultCityCode = 87; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
+		var defaultCityName = "Tỉnh Đồng Tháp"; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
+		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
+		var showKySoDvc = true; /*sử dụng ký số phía cổng DVC*/
+		var hasPreviewSync = false; /*in tiến trình xử lý hs*/
+		var thanhToanChuyenKhoan = true; /*sử dụng thanh toán chuyển khoản*/
+		var thaoTacUyQuyen = false; /*sử dụng chức năng ủy quyền xử lý hs*/
+		var hasDownloadAllFile = false; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
+		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
+		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
+		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+	</script>
+	<!-- end -->
 </head>
 
 <body class="${css_class} page-theme">
