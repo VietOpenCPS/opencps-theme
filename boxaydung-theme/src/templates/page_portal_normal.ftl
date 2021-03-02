@@ -70,6 +70,47 @@
 		})();
 		</script>
 	<!-- End EMC Tracking Code -->
+
+	<!-- Config Scope -->
+	<script type="text/javascript">
+		var activeChangePass = true; /* disable change password employee*/
+		var requiredOptionConfig = {
+			applicantIdNo: false,
+			applicantName: true,
+			address: true,
+			cityCode: false,
+			districtCode: false,
+			wardCode: false,
+			contactTelNo: true,
+			contactEmail: true,
+			delegateIdNo: true,
+			delegateName: true,
+			delegateAddress: true,
+			delegateCityCode: false,
+			delegateDistrictCode: false,
+			delegateWardCode: false,
+			delegateTelNo: true,
+			delegateEmail: false
+		}; /*cấu hình bắt buộc thông tin chủ hồ sơ*/
+		var applicantSameDelegate = false; /*Tự động check thông tin người nộp giống thông tin chủ hồ sơ*/
+		var showTinhPhi = false; /*show tính phí dịch vụ chuyển phát*/
+		var hasOrganization = false; /*loại người dùng tách "Tổ chức" riêng*/
+		var applicantConfig = false; /*bind applicant từ danh sách applicant*/
+		var notifyConfig = false; /*lựa chọn hình thức gửi thông báo*/
+		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
+		var defaultCityName = false; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
+		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
+		var showKySoDvc = false; /*sử dụng ký số phía cổng DVC*/
+		var hasPreviewSync = false; /*in tiến trình xử lý hs*/
+		var thanhToanChuyenKhoan = true; /*sử dụng thanh toán chuyển khoản*/
+		var thaoTacUyQuyen = false; /*sử dụng chức năng ủy quyền xử lý hs*/
+		var hasDownloadAllFile = true; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
+		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
+		var fromViaPostalConfig = true; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
+		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+	</script>
+	<!-- end -->
 </head>
 
 <body class="${css_class} mBody page-theme">
