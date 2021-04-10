@@ -193,7 +193,7 @@
 					</a>
 				</div>
 				<div style="
-					width: 245px;
+					width: 255px;
 					height: 31px;
 					line-height: 31px;
 					background-color: #fd1515;
@@ -205,7 +205,7 @@
 					z-index: 2 !important;
 					border-bottom-right-radius: 15px;
 					border-top-right-radius: 15px;
-				"><span>Tổng đài hỗ trợ</span>:<span style="font-size: 16px;font-weight: 500;"> 1900.86.68.95</span></div>
+				"><span>Tổng đài giải đáp</span>:<span style="font-size: 16px;font-weight: 500;"> 1900.86.68.95</span></div>
 			</div>
 		</div>
 		<!--  -->
