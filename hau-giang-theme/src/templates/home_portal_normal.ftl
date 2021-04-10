@@ -93,18 +93,20 @@
 		</section>
 
 		<footer id="footer">
-			<div class="container">
-				<div class="owner"><b>Cơ quan chủ quản:</b> UBND tỉnh Hậu Giang</div>
-				<div class="divide">|</div>
-				<p><b>Hỗ trợ sử dụng:</b> 02466822443</p>
-				<div class="divide">|</div>
-				<p><b>Hướng dẫn Thủ tục hành chính:</b> 0293.3554567</p>
-				<div class="divide">|</div>
-				<p><b>Email:</b> dichvucong@haugiang.gov.vn</p>
+			<div class="container" style="
+				display: block !important;
+				position: relative !important;
+			">
+				<div class="owner mb-1"><b>Cơ quan chủ quản:</b> UBND tỉnh Hậu Giang</div>
+				<p class="mb-1"><b>Tổng đài giải đáp tự động:</b> 1900 86 68 95</p>
+				<p class="mb-1"><b>Hướng dẫn sử dụng:</b> 0246.6822443</p>
+				<p class="mb-1"><b>Tiếp nhận phản ánh:</b> 0293.3554567</p>
+				<p class=""><b>Email:</b> dichvucong@haugiang.gov.vn</p>
 				<div style="
 					display: inline-block;
 					position: absolute;
 					right: 10px;
+					top: 0px
 				">
 					Đang truy cập:&nbsp;
 					<span id="counterVisitor" class="">0</span>
@@ -125,7 +127,7 @@
 			"data": {
 				"module": "API",
 				"method": "Live.getCounters",
-				"idSite": "3",
+				"idSite": "2",
 				"lastMinutes": "1",
 				"format": "JSON",
 				"token_auth": "bc959a4604e178dd1cf61e5d9ab7b2b7"
@@ -140,7 +142,7 @@
 				} catch (error) {
 				}
 			});
-			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=2&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
 			xhr.send()
 		}
 		setTimeout(function () {
@@ -171,6 +173,8 @@
 		  .error(function (){
 		    alert("Chức năng đang cập nhật. Thử lại sau")
 		  })
+
+			// window.location.href = "/web/cong-dich-vu-cong-tinh-hau-giang/register#/login"
 		}
 	</script>
 	

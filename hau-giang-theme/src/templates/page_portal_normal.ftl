@@ -62,7 +62,7 @@
 		(function() {
 		  var u="//thongke.opencps.vn/";
 		  _paq.push(['setTrackerUrl', u+'matomo.php']);
-		  _paq.push(['setSiteId', '3']);
+		  _paq.push(['setSiteId', '2']);
 		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 		})();
@@ -76,7 +76,7 @@
 		_govaq.push(['enableLinkTracking']);
 		(function () {
 			_govaq.push(['setTrackerUrl', 'https://f-emc.ngsp.gov.vn/tracking']);
-			_govaq.push(['setSiteId', '95']);
+			_govaq.push(['setSiteId', '94']);
 			var d = document,
 				g = d.createElement('script'),
 				s = d.getElementsByTagName('script')[0];
@@ -181,20 +181,49 @@
 				</@>
 			</#if>
 		</section>
-
+		<!--  -->
+		<div class="hotline-phone-ring-wrap">
+			<div class="hotline-phone-ring">
+				<div class="hotline-phone-ring-circle"></div>
+				<div class="hotline-phone-ring-circle-fill"></div>
+				<div class="hotline-phone-ring-img-circle">
+					<a href="tel:1900866895" class="pps-btn-img">
+						<img src="https://inslaw.vn/wp-content/plugins/hotline-phone-ring/assets/images/icon-1.png"
+							alt="Số điện thoại" width="50">
+					</a>
+				</div>
+				<div style="
+					width: 245px;
+					height: 31px;
+					line-height: 31px;
+					background-color: #fd1515;
+					color: #fff;
+					position: absolute;
+					left: 51px;
+					top: 38px;
+					padding-left: 28px;
+					z-index: 2 !important;
+					border-bottom-right-radius: 15px;
+					border-top-right-radius: 15px;
+				"><span>Tổng đài hỗ trợ</span>:<span style="font-size: 16px;font-weight: 500;"> 1900.86.68.95</span></div>
+			</div>
+		</div>
+		<!--  -->
 		<footer id="footer">
-			<div class="container">
-				<div class="owner"><b>Cơ quan chủ quản:</b> UBND tỉnh Hậu Giang</div>
-				<div class="divide">|</div>
-				<p><b>Hỗ trợ sử dụng:</b> 02466822443</p>
-				<div class="divide">|</div>
-				<p><b>Hướng dẫn Thủ tục hành chính:</b> 0293.3554567</p>
-				<div class="divide">|</div>
-				<p><b>Email:</b> dichvucong@haugiang.gov.vn</p>
+			<div class="container" style="
+				display: block !important;
+				position: relative !important;
+			">
+				<div class="owner mb-1"><b>Cơ quan chủ quản:</b> UBND tỉnh Hậu Giang</div>
+				<p class="mb-1"><b>Tổng đài giải đáp tự động:</b> 1900 86 68 95</p>
+				<p class="mb-1"><b>Hướng dẫn sử dụng:</b> 0246.6822443</p>
+				<p class="mb-1"><b>Tiếp nhận phản ánh:</b> 0293.3554567</p>
+				<p class=""><b>Email:</b> dichvucong@haugiang.gov.vn</p>
 				<div style="
 					display: inline-block;
 					position: absolute;
 					right: 10px;
+					top: 0px
 				">
 					Đang truy cập:&nbsp;
 					<span id="counterVisitor" class="">0</span>
@@ -204,7 +233,7 @@
 	</div>
 	
 	<a href="" class="btt"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
-	<a href="/web/cong-dich-vu-cong-tinh-hau-giang" class="bth"><i class="fa fa-home" aria-hidden="true"></i></a>
+	<!-- <a href="/web/cong-dich-vu-cong-tinh-hau-giang" class="bth"><i class="fa fa-home" aria-hidden="true"></i></a> -->
 		
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
@@ -218,7 +247,7 @@
 			"data": {
 				"module": "API",
 				"method": "Live.getCounters",
-				"idSite": "3",
+				"idSite": "2",
 				"lastMinutes": "1",
 				"format": "JSON",
 				"token_auth": "bc959a4604e178dd1cf61e5d9ab7b2b7"
@@ -240,7 +269,7 @@
 				} catch (error) {
 				}
 			});
-			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=2&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
 			xhr.send()
 		}
 		setTimeout(function () {
@@ -304,6 +333,7 @@
 		  .error(function (){
 		    alert("Chức năng đang cập nhật. Thử lại sau")
 		  })
+			// window.location.href = "/web/cong-dich-vu-cong-tinh-hau-giang/register#/login"
 		}
 		
 		
@@ -903,6 +933,192 @@
 				display: none !important;
 			}
 		}
+		/* hotline rings */
+		.hotline-phone-ring-wrap {
+			position: fixed;
+			bottom: 0;
+    		right: 200px;
+			z-index: 999999;
+			}
+
+			.hotline-phone-ring {
+			position: relative;
+			visibility: visible;
+			background-color: transparent;
+			width: 110px;
+			height: 100px;
+			cursor: pointer;
+			z-index: 11;
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: translateZ(0);
+			transition: visibility .5s;
+			left: 0;
+			bottom: 0;
+			display: block;
+			}
+
+			.hotline-phone-ring-circle {
+				width: 87px;
+			height: 87px;
+			top: 10px;
+			left: 10px;
+			position: absolute;
+			background-color: transparent;
+			border-radius: 100%;
+			border: 2px solid #e60808;
+			-webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+			animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+			transition: all .5s;
+			-webkit-transform-origin: 50% 50%;
+			-ms-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			opacity: 0.5;
+			}
+
+			.hotline-phone-ring-circle-fill {
+				z-index: 5;
+				width: 57px;
+			height: 57px;
+			top: 25px;
+			left: 25px;
+			position: absolute;
+			background-color: rgba(230, 8, 8, 0.7);
+			border-radius: 100%;
+			border: 2px solid transparent;
+			-webkit-animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+			animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+			transition: all .5s;
+			-webkit-transform-origin: 50% 50%;
+			-ms-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			}
+
+			.hotline-phone-ring-img-circle {
+				background-color: #e60808;
+				z-index: 3;
+				width: 33px;
+			height: 33px;
+			top: 37px;
+			left: 37px;
+			position: absolute;
+			background-size: 20px;
+			border-radius: 100%;
+			border: 2px solid transparent;
+			-webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+			animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+			-webkit-transform-origin: 50% 50%;
+			-ms-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 0 5px 2px rgb(0 0 0 / 24%);
+			}
+
+			.hotline-phone-ring-img-circle .pps-btn-img {
+				display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			}
+
+			.hotline-phone-ring-img-circle .pps-btn-img img {
+				width: 20px;
+				height: 20px;
+			}
+
+			.hotline-bar {
+			position: absolute;
+			background: rgba(230, 8, 8, 0.75);
+			height: 40px;
+			width: 200px;
+			line-height: 40px;
+			border-radius: 3px;
+			padding: 0 10px;
+			background-size: 100%;
+			cursor: pointer;
+			transition: all 0.8s;
+			-webkit-transition: all 0.8s;
+			z-index: 9;
+			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 50px !important;
+			/* width: 175px !important; */
+			left: 33px;
+			bottom: 37px;
+			}
+
+			.hotline-bar > a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: bold;
+			text-indent: 50px;
+			display: block;
+			letter-spacing: 1px;
+			line-height: 40px;
+			font-family: Arial;
+			}
+
+			.hotline-bar > a:hover,
+			.hotline-bar > a:active {
+			color: #fff;
+			}
+
+			@-webkit-keyframes phonering-alo-circle-anim {
+			0% {
+				-webkit-transform: rotate(0) scale(0.5) skew(1deg);
+				-webkit-opacity: 0.1;
+			}
+			30% {
+				-webkit-transform: rotate(0) scale(0.7) skew(1deg);
+				-webkit-opacity: 0.5;
+			}
+			100% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+				-webkit-opacity: 0.1;
+			}
+			}
+			@-webkit-keyframes phonering-alo-circle-fill-anim {
+			0% {
+				-webkit-transform: rotate(0) scale(0.7) skew(1deg);
+				opacity: 0.6;
+			}
+			50% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+				opacity: 0.6;
+			}
+			100% {
+				-webkit-transform: rotate(0) scale(0.7) skew(1deg);
+				opacity: 0.6;
+			}
+			}
+			@-webkit-keyframes phonering-alo-circle-img-anim {
+			0% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+			}
+			10% {
+				-webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+			20% {
+				-webkit-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+			30% {
+				-webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+			40% {
+				-webkit-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+			50% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+			}
+			100% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+			}
+			}
+		/*  */
 	</style>
 	
 	<script type="text/javascript">
