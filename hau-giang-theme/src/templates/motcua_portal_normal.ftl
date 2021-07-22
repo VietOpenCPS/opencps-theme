@@ -21,7 +21,7 @@
 	<!--<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8888" rel="stylesheet" type="text/css">-->
 	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=666" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=7189987" rel="stylesheet">
 
 	<script>
         window.__define = window.define;
@@ -114,7 +114,7 @@
 		var hasOrganization = false; /*loại người dùng tách "Tổ chức" riêng*/
 		var applicantConfig = true; /*bind applicant từ danh sách applicant*/
 		var notifyConfig = true; /*lựa chọn hình thức gửi thông báo*/
-		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
+		var defaultCityCode = 93; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
 		var defaultCityName = ""; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
 		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
 		var showKySoDvc = true; /*sử dụng ký số phía cổng DVC*/
@@ -123,9 +123,10 @@
 		var thaoTacUyQuyen = false; /*sử dụng chức năng ủy quyền xử lý hs*/
 		var hasDownloadAllFile = false; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
 		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
-		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var fromViaPostalConfig = true; /*check xác nhận là hồ sơ nhận qua bưu chính*/
 		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
-		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/;
+		var traCuuLgspCongDan = true
 	</script>
 	<!-- end -->
 </head>
@@ -179,18 +180,20 @@
 		</section>
 
 		<footer id="footer">
-			<div class="container">
-				<div class="owner"><b>Cơ quan chủ quản:</b> UBND tỉnh Hậu Giang</div>
-				<div class="divide">|</div>
-				<p><b>Hỗ trợ sử dụng:</b> 02466822443</p>
-				<div class="divide">|</div>
-				<p><b>Hướng dẫn Thủ tục hành chính:</b> 0293.3554567</p>
-				<div class="divide">|</div>
-				<p><b>Email:</b> dichvucong@haugiang.gov.vn</p>
+			<div class="container" style="
+				display: block !important;
+				position: relative !important;
+			">
+				<div class="owner mb-1"><b>Cơ quan chủ quản:</b> UBND tỉnh Hậu Giang</div>
+				<p class="mb-1"><b>Tổng đài giải đáp tự động:</b> 1900 86 68 95</p>
+				<p class="mb-1"><b>Hướng dẫn sử dụng:</b> 0246.6822443</p>
+				<p class="mb-1"><b>Tiếp nhận phản ánh:</b> 0293.3554567</p>
+				<p class=""><b>Email:</b> dichvucong@haugiang.gov.vn</p>
 				<div style="
 					display: inline-block;
 					position: absolute;
 					right: 10px;
+					top: 0px
 				">
 					Đang truy cập:&nbsp;
 					<span id="counterVisitor" class="">0</span>
@@ -200,7 +203,7 @@
 	</div>
 	
 	<a href="" class="btt"><i class="fa fa-chevron-up" aria-hidden="true"></i></a>
-	<a href="/web/mot-cua-mic" class="bth"><i class="fa fa-home" aria-hidden="true"></i></a>
+	<!-- <a href="/web/mot-cua-mic" class="bth"><i class="fa fa-home" aria-hidden="true"></i></a> -->
 		
 	<!-- inject:js -->
 	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
@@ -535,12 +538,12 @@
 		.v-window__container--is-active {
 			height: auto !important;
 		}
-		.body ..accent--text, body .primary--text {
+		.body .accent--text, body .primary--text {
 			color: #0167d3 !important;
 			caret-color: #0167d3 !important;
 		}
 		.page-theme .group__thanh_phan .v-icon, .motcua-theme .group__thanh_phan .v-icon {
-			color: #0167d3 !important;
+			color: #903938 !important
 		}
 		.page-theme .red--text .v-icon, .motcua-theme .red--text .v-icon {
 			color: #c62828 !important;
@@ -870,13 +873,15 @@
 		.background-triangle-small:before {
 			border-top: 19px solid #903938 !important;
 		}
-		.page-theme .v-icon {
+		.page-theme .v-icon:not(.v-alert__icon) {
 			color: #903938 !important;
 		}
 		.page-theme .primary .v-icon, .page-theme .blue.darken-3 .v-icon, .page-theme .background-triangle-small .v-icon {
 			color: white !important;
 		}
-		
+		.alert.alert-info {
+			display: none;
+		}
 		@media screen and (max-width: 767px) {
 			.btn-banner {
 				display: none !important;

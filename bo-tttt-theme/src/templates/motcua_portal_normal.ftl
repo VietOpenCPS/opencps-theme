@@ -56,8 +56,6 @@
 	
 	<!--  -->
 	<script>
-		var activePdfEditor = true;
-		var viTriLuuTru = true;
         window.define = window.__define;
         window.require = window.__require;
         window.__define = undefined;
@@ -78,6 +76,47 @@
 		})();
 	</script>
 	<!-- End Tracking OpenCps -->
+
+	<!-- Config Scope -->
+	<script type="text/javascript">
+		var activeChangePass = true; /* disable change password employee*/
+		var requiredOptionConfig = {
+			applicantIdNo: true,
+			applicantName: true,
+			address: true,
+			cityCode: true,
+			districtCode: true,
+			wardCode: true,
+			contactTelNo: true,
+			contactEmail: false,
+			delegateIdNo: false,
+			delegateName: true,
+			delegateAddress: true,
+			delegateCityCode: true,
+			delegateDistrictCode: true,
+			delegateWardCode: true,
+			delegateTelNo: true,
+			delegateEmail: false
+		}; /*cấu hình bắt buộc thông tin chủ hồ sơ*/
+		var applicantSameDelegate = false; /*Tự động check thông tin người nộp giống thông tin chủ hồ sơ*/
+		var showTinhPhi = false; /*show tính phí dịch vụ chuyển phát*/
+		var hasOrganization = false; /*loại người dùng tách "Tổ chức" riêng*/
+		var applicantConfig = true; /*bind applicant từ danh sách applicant*/
+		var notifyConfig = true; /*lựa chọn hình thức gửi thông báo*/
+		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
+		var defaultCityName = false; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
+		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
+		var showKySoDvc = false; /*sử dụng ký số phía cổng DVC*/
+		var hasPreviewSync = true; /*in tiến trình xử lý hs*/
+		var thanhToanChuyenKhoan = true; /*sử dụng thanh toán chuyển khoản*/
+		var thaoTacUyQuyen = true; /*sử dụng chức năng ủy quyền xử lý hs*/
+		var hasDownloadAllFile = false; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
+		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
+		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var activePdfEditor = true; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
+		var viTriLuuTru = true; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+	</script>
+	<!-- end -->
 </head>
 
 <body class="${css_class} mBody page-theme">

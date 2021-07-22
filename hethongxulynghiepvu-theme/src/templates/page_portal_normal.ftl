@@ -112,6 +112,8 @@
 		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
 		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
 		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+		var rememberApplicant = true;
+		var showOptionName = true;
 	</script>
 	<!-- end -->
 </head>
