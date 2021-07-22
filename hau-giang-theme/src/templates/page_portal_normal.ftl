@@ -127,7 +127,7 @@
 		var fromViaPostalConfig = true; /*check xác nhận là hồ sơ nhận qua bưu chính*/
 		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
 		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/;
-		var traCuuLgspCongDan = true
+		var traCuuLgspCongDan = false
 	</script>
 	<!-- end -->
 </head>
