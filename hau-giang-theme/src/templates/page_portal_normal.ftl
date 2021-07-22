@@ -21,7 +21,7 @@
 	<!--<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8888" rel="stylesheet" type="text/css">-->
 	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=666" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=789987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=1789987" rel="stylesheet">
 
 	<script>
         window.__define = window.define;
@@ -62,7 +62,7 @@
 		(function() {
 		  var u="//thongke.opencps.vn/";
 		  _paq.push(['setTrackerUrl', u+'matomo.php']);
-		  _paq.push(['setSiteId', '2']);
+		  _paq.push(['setSiteId', '3']);
 		  var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 		  g.type='text/javascript'; g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 		})();
@@ -76,7 +76,7 @@
 		_govaq.push(['enableLinkTracking']);
 		(function () {
 			_govaq.push(['setTrackerUrl', 'https://f-emc.ngsp.gov.vn/tracking']);
-			_govaq.push(['setSiteId', '94']);
+			_govaq.push(['setSiteId', '95']);
 			var d = document,
 				g = d.createElement('script'),
 				s = d.getElementsByTagName('script')[0];
@@ -115,7 +115,7 @@
 		var hasOrganization = false; /*loại người dùng tách "Tổ chức" riêng*/
 		var applicantConfig = true; /*bind applicant từ danh sách applicant*/
 		var notifyConfig = true; /*lựa chọn hình thức gửi thông báo*/
-		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
+		var defaultCityCode = 93; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
 		var defaultCityName = ""; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
 		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
 		var showKySoDvc = true; /*sử dụng ký số phía cổng DVC*/
@@ -124,9 +124,10 @@
 		var thaoTacUyQuyen = false; /*sử dụng chức năng ủy quyền xử lý hs*/
 		var hasDownloadAllFile = false; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
 		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
-		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var fromViaPostalConfig = true; /*check xác nhận là hồ sơ nhận qua bưu chính*/
 		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
-		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/;
+		var traCuuLgspCongDan = true
 	</script>
 	<!-- end -->
 </head>
@@ -188,11 +189,11 @@
 				<div class="hotline-phone-ring-circle-fill"></div>
 				<div class="hotline-phone-ring-img-circle">
 					<a href="tel:1900866895" class="pps-btn-img">
-						<img src="https://inslaw.vn/wp-content/plugins/hotline-phone-ring/assets/images/icon-1.png"
+						<img src="/o/hau-giang-theme/images/ring-phone.png"
 							alt="Số điện thoại" width="50">
 					</a>
 				</div>
-				<div style="
+				<a href="tel:1900866895" style="
 					width: 255px;
 					height: 31px;
 					line-height: 31px;
@@ -205,7 +206,7 @@
 					z-index: 2 !important;
 					border-bottom-right-radius: 15px;
 					border-top-right-radius: 15px;
-				"><span>Tổng đài giải đáp</span>:<span style="font-size: 16px;font-weight: 500;"> 1900.86.68.95</span></div>
+				"><span>Tổng đài giải đáp</span>:<span style="font-size: 16px;font-weight: 500;"> 1900.86.68.95</span></a>
 			</div>
 		</div>
 		<!--  -->
@@ -247,8 +248,8 @@
 			"data": {
 				"module": "API",
 				"method": "Live.getCounters",
-				"idSite": "2",
-				"lastMinutes": "1",
+				"idSite": "3",
+				"lastMinutes": "3",
 				"format": "JSON",
 				"token_auth": "bc959a4604e178dd1cf61e5d9ab7b2b7"
 			}
@@ -269,7 +270,7 @@
 				} catch (error) {
 				}
 			});
-			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=2&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=3&lastMinutes=3&format=JSON&token_auth=bc959a4604e178dd1cf61e5d9ab7b2b7")
 			xhr.send()
 		}
 		setTimeout(function () {
@@ -589,7 +590,7 @@
 			caret-color: #0167d3 !important;
 		}
 		.page-theme .group__thanh_phan .v-icon, .motcua-theme .group__thanh_phan .v-icon {
-			color: #0167d3 !important;
+			color: #903938 !important
 		}
 		.page-theme .red--text .v-icon, .motcua-theme .red--text .v-icon {
 			color: #c62828 !important;
@@ -890,7 +891,7 @@
 		.background-triangle-small:before {
 			border-top: 19px solid #903938 !important;
 		}
-		.page-theme .v-icon, .background-triangle-big1 + div .groupcode-active {
+		.page-theme .v-icon:not(.v-alert__icon), .background-triangle-big1 + div .groupcode-active {
 			color: #903938 !important;
 		}
 		.page-theme .primary .v-icon, .page-theme .blue.darken-3 .v-icon, .page-theme .background-triangle-small .v-icon {
@@ -927,7 +928,9 @@
 		.dvc-theme #navigation .login-motcua, .motcua-theme #navigation .login-dvc {
 			display: none !important;
 		}
-		
+		.alert.alert-info {
+			display: none;
+		}
 		@media screen and (max-width: 767px) {
 			.btn-banner {
 				display: none !important;
@@ -995,7 +998,7 @@
 
 			.hotline-phone-ring-img-circle {
 				background-color: #e60808;
-				z-index: 3;
+				z-index: 6;
 				width: 33px;
 			height: 33px;
 			top: 37px;

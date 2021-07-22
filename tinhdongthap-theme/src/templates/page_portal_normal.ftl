@@ -23,7 +23,7 @@
 	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888" rel="stylesheet" type="text/css">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=1789987" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=173892987" rel="stylesheet">
 
 	<script>
         window.__define = window.define;
@@ -126,9 +126,11 @@
 		var thaoTacUyQuyen = false; /*sử dụng chức năng ủy quyền xử lý hs*/
 		var hasDownloadAllFile = false; /*sử dụng chức năng download tất cả giấy tờ đính kèm*/
 		var checkTrungChuHoSo = false; /*bật check trùng chủ hồ sơ có hồ sơ đang giải quyết*/
-		var fromViaPostalConfig = false; /*check xác nhận là hồ sơ nhận qua bưu chính*/
+		var fromViaPostalConfig = true; /*check xác nhận là hồ sơ nhận qua bưu chính*/
 		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
 		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
+		var traCuuLgspCongDan = true;
+		var systemLgspConfig = "DongThap"
 	</script>
 	<!-- end -->
 </head>
@@ -693,7 +695,7 @@
 		.background-triangle-small:before {
 			border-top: 19px solid #204b03;
 		}
-		.page-theme .v-icon {
+		.page-theme .v-icon:not(.v-alert__icon) {
 			color: #658a04 !important;
 		}
 		.page-theme .primary .v-icon, .page-theme .blue.darken-3 .v-icon, .page-theme .background-triangle-small .v-icon {

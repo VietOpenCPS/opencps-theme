@@ -521,3 +521,6 @@ body .v-dialog .v-toolbar .v-toolbar__content {
 .dialog_menuTabs .v-tabs__item--active{
     background-color: #e1e1e1;    
 }
+#navigation.nav-fixed-top {
+    position: relative !important;
+}

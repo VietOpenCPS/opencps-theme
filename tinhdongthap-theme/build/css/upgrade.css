@@ -511,8 +511,72 @@ body .absolute__btn_panel {
 
 body .v-dialog .v-toolbar .v-toolbar__content {
     height: 40px !important;
-    background-color: #00204a;
+    /* background-color: #00204a; */
 }
 #mermaid_dossier #theGraph {
     height: 350px;
 }
+
+/* style form giấy phép */
+.form_alpaca .alpacaa label {
+    line-height: 30px;
+  }
+  .form_alpaca .alpacaa input:not([type=radio]), .form_alpaca .alpacaa select{
+    height: 32px !important;
+  }
+  .select2-container .select2-selection--single, .select2-container .select2-selection--single {
+    height: 32px !important;
+  }
+  .select2-search.select2-search--inline input.select2-search__field{
+    border: none !important;
+  }
+  .form_alpaca .alpacaa input, .form_alpaca .alpacaa textarea, .form_alpaca .alpacaa select {
+      -webkit-tap-highlight-color: rgba(0,0,0,0);
+      border-collapse: separate;
+      box-sizing: border-box;
+      font: inherit;
+      margin: 0;
+      font-family: inherit;
+      padding: 6px 6px;
+      font-size: 14px;
+      line-height: 1.42857143;
+      color: #555;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+      transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+      position: relative;
+      z-index: 2;
+      /*float: left;*/
+      width: 100%;
+      margin-bottom: 0;
+      border-width: 0;
+      border: 1px solid #d3d3d3;
+      border-width: 1px !important;
+  }
+  .form_alpaca .alpacaa input:focus, .form_alpaca .alpacaa textarea:focus, .form_alpaca .alpacaa select:focus {
+      outline: none
+  }
+  .red-text {
+      color: red;
+  }
+  body .alpaca-field .alpaca-field-select:after{
+    border: none !important;
+  }
+  body .alpaca-field .alpaca-field-select:before {
+    border: none !important;
+  }
+  .select2-container--default .select2-selection--single {
+      border: 1px solid #dedede !important;
+  }
+  .select2-search.select2-search--inline {
+    width: 100%;
+  }
+  .form_alpaca .alpacaa input:not([type=radio]){
+    border-bottom: 1px solid #ccc !important;
+    border-top: 1px solid #ccc !important;
+    border-left: 1px solid #ccc !important;
+    border-right: 1px solid #ccc !important;
+    background-color: #fff !important;
+  }
