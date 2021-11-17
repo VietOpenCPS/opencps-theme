@@ -12,14 +12,14 @@
 	
 	<link rel="Shortcut Icon" href="${themeDisplay.getPathThemeRoot()}/images/favicon.ico">
 	
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=vietnamese" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=vietnamese" rel="stylesheet"> -->
 	<link rel="stylesheet" href="${themeDisplay.getPathThemeRoot()}/css/font-awesome.min.css">
 
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8888" rel="stylesheet" type="text/css">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=88312388" rel="stylesheet" type="text/css">
 	
 	<script>
         window.__define = window.define;
@@ -107,7 +107,7 @@
 			<p class="info">
 				<span>Địa chỉ: Số 12, đường 30/4, phường 1, thành phố Cao Lãnh, tỉnh Đồng Tháp</span>
 				<span class="hid">|</span>
-				<span>Hỗ trợ sử dụng phần mềm: 024.668.22443/02773.873.995</span>
+				<span>Hỗ trợ sử dụng phần mềm: 024.668.22443/ 02773873995/ 02773856113</span>
 				<span class="hid">|</span>
 				<span>Email: motcuadichvucong@gmail.com</span>
 			</p>

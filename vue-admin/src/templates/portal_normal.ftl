@@ -34,9 +34,9 @@
 	<script src="/o/vue-admin/js/bootstrap.min.js"></script>
 	<script src="/o/vue-admin/js/handlebars.min.js"></script>
 	<script src="/o/vue-admin/js/alpaca.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-	<script src="/o/vue-admin/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="/o/vue-admin/js/date-time-picker.js?t=8888"></script>
+	<script src="/o/vue-admin/js/select2.min.js"></script>
+	<!-- <script src="/o/vue-admin/js/bootstrap-datetimepicker.min.js"></script>
+	<script src="/o/vue-admin/js/date-time-picker.js?t=8888"></script> -->
     
 	<script>
         window.define = window.__define;

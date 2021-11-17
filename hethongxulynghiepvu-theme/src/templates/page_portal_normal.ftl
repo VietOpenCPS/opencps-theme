@@ -32,9 +32,9 @@
         window.require = undefined;
     </script>
     
-	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/handlebars.min.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js?t=9736124123"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap.min.js?t=9736124123"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/handlebars.min.js?t=9736124123"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/alpaca.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/moment-with-locales.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap-datetimepicker.min.js"></script>
@@ -102,7 +102,7 @@
 		var notifyConfig = false; /*lựa chọn hình thức gửi thông báo*/
 		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
 		var defaultCityName = false; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
-		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
+		var khoTaiLieuCongDan = true; /*sử dụng kho tài liệu công dân*/
 		var showKySoDvc = false; /*sử dụng ký số phía cổng DVC*/
 		var hasPreviewSync = false; /*in tiến trình xử lý hs*/
 		var thanhToanChuyenKhoan = true; /*sử dụng thanh toán chuyển khoản*/
@@ -114,6 +114,8 @@
 		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/
 		var rememberApplicant = true;
 		var showOptionName = true;
+		var urlFileHdsdKhoDienTu = "https://motcua.mt.gov.vn/documents/35166/0/T%C3%A0i+li%E1%BB%87u+HDSD+s%E1%BB%91+h%C3%B3a+KQ+TTHC.pdf?t=1634544058979";
+		var doActionGroupNew = true;
 	</script>
 	<!-- end -->
 </head>

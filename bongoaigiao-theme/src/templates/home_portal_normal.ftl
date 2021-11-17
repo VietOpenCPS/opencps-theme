@@ -129,7 +129,7 @@
 		      'Token': window.Liferay.authToken
 		    }
 		  });
-		  $.get('/o/rest/v2/dvcqgsso/authurl',{state: "",redirectURL: "https://dichvucong.haugiang.gov.vn/web/cong-dich-vu-cong-tinh-hau-giang"})
+		  $.get('/o/rest/v2/dvcqgsso/authurl',{state: "",redirectURL: "/web/cong-dich-vu-cong-bo-ngoai-giao"})
 		  .done(function(data) {    
 		        window.location.href = data
 		  })

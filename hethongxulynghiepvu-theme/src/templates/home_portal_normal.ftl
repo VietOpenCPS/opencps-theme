@@ -29,9 +29,9 @@
         window.require = undefined;
     </script>
     
-	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/handlebars.min.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js?t=9736124123"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap.min.js?t=9736124123"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/handlebars.min.js?t=9736124123"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/alpaca.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/moment-with-locales.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap-datetimepicker.min.js"></script>

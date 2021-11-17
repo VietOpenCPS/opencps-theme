@@ -10,17 +10,17 @@
 	<meta content="initial-scale=1.0, width=device-width" name="viewport" />
 	
 	<link rel="Shortcut Icon" href="${themeDisplay.getPathThemeRoot()}/images/favicon.ico">
-	
+<!-- 	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=vietnamese" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Oswald:400,700&display=swap&subset=vietnamese" rel="stylesheet">
-	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css">
+	<link href='https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons' rel="stylesheet" type="text/css"> -->
 	<link rel="stylesheet" href="${themeDisplay.getPathThemeRoot()}/css/font-awesome.min.css">
 
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=82183188" rel="stylesheet" type="text/css">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8312312888" rel="stylesheet" type="text/css">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/bootstrap-glyphicons.css" rel="stylesheet" type="text/css">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/chunk-vendors.css?t=123321" rel="stylesheet">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}/css/upgrade.css?t=173389987" rel="stylesheet">
@@ -191,7 +191,7 @@
 			<p class="info">
 				<span>Địa chỉ: Số 12, đường 30/4, phường 1, thành phố Cao Lãnh, tỉnh Đồng Tháp</span>
 				<span class="hid">|</span>
-				<span>Hỗ trợ sử dụng phần mềm: 024.668.22443/02773.873.995</span>
+				<span>Hỗ trợ sử dụng phần mềm: 024.668.22443/ 02773873995/ 02773856113</span>
 				<span class="hid">|</span>
 				<span>Email: motcuadichvucong@gmail.com</span>
 			</p>
@@ -203,8 +203,8 @@
 	<!--<a href="/web/cong-dich-vu-cong-tinh-dong-thap" class="bth"><i class="fa fa-home" aria-hidden="true"></i></a>-->
 		
 	<!-- inject:js -->
-	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js"></script>
-	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js?t=3124123123"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js?t=3124123123"></script>
 	<script>
 		var settingsGetTracking = {
 			"url": "https://thongke.opencps.vn",
