@@ -48,6 +48,10 @@
 	<script src="${themeDisplay.getPathThemeRoot()}/js/mermaid.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/vgcaplugin.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/function-vtca.min.js"></script>
+
+	<script src="${themeDisplay.getPathThemeRoot()}/js/trumbowyg.min.js?t=123"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/vue-trumbowyg.js?t=123"></script>
+    <script src="${themeDisplay.getPathThemeRoot()}/js/jquery.jexcel.js"></script>
 	
 	<script>
         window.define = window.__define;
@@ -203,8 +207,8 @@
 	<!--<a href="/web/cong-dich-vu-cong-tinh-dong-thap" class="bth"><i class="fa fa-home" aria-hidden="true"></i></a>-->
 		
 	<!-- inject:js -->
-	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js?t=3124123123"></script>
-	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js?t=3124123123"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/app.js?t=312412312399999"></script>
+	<script type="text/javascript" src="/o/opencps-store/js/cli/login/app/js/chunk-vendors.js?t=312412312399999"></script>
 	<script>
 		var settingsGetTracking = {
 			"url": "https://thongke.opencps.vn",
@@ -666,7 +670,7 @@
 			font-size: 24px;
 		}
 		body .btt.btt-is-visible, body .bth.btt-is-visible {
-			display: block;
+			display: none;
 		}
 		body .btt:hover, body .bth:hover {
 			background-color: #204b03;
