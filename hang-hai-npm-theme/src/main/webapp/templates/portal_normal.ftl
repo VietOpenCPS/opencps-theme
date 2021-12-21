@@ -14,17 +14,17 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Material+Icons" rel="stylesheet" type="text/css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 	
-	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}css/app.51fb88889af6c73cba7a2457859153eb.css" rel="stylesheet">
+	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}css/app.6884c2200dcff6eea32578c472a2c737.css" rel="stylesheet">
 	<link type="text/css" href="${themeDisplay.getPathThemeRoot()}css/base-style.css?t=123132211" rel="stylesheet">
 
 </head>
 
 <body class="mBody">
-	<header id="banner">
-		<div class="container-fluid align-center">
+	<header id="banner" style="height: inherit !important;">
+		<div class="container-fluid align-center" style=" padding: 0px 30px !important;">
 			<div class="logo align-middle">
 				<a href="$site_default_url">
-					<img src="${themeDisplay.getPathThemeRoot()}/images/logo_hanghai.png">
+					<img src="${themeDisplay.getPathThemeRoot()}/images/logo_dtnd.png">
 				</a>
 			</div>
 			
@@ -56,16 +56,16 @@
     </#if>
 	<div id="app"></div>
 	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}js/vgcaplugin.js"></script>
-	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}js/manifest.9612b955abb3b0cb324d.js"></script>
+	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}js/manifest.3fb6908d832c933f6121.js"></script>
 	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}js/vendor.bc2132d7c2eee437576d.js"></script>
-	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}js/app.dfbc729a9abae1754165.js"></script>
+	<script type="text/javascript" src="${themeDisplay.getPathThemeRoot()}js/app.8714d4e8de1ecdbdd117.js"></script>
 	
 	<footer id="footer"> 
 		<div class="owner">
 			<ul>
-				<li>Cục Hàng Hải Việt Nam - Bộ Giao Thông vận tải</li>
-				<li><i class="fa fa-map-marker" aria-hidden="true"></i> 8 Phạm Hùng, Mai Dịch, Cầu Giấy, Hà Nội</li>
-				<li></i> (024) 3768 3065</li>
+				<li>Cục Đường thủy nội địa Việt Nam - Bộ Giao Thông vận tải</li>
+				<li><i class="fa fa-map-marker" aria-hidden="true"></i> 05 Tôn Thất Thuyết - Q.Cầu Giấy - Thành phố Hà Nội</li>
+				<li></i> 04 39421887</li>
 				<li>
 					<a href="/web/guest/huong-dan-su-dung" class="manual">Hướng dẫn sử dụng</a>
 				</li>
@@ -73,6 +73,7 @@
 		</div>
 	</footer>
 </div>
+
 </body>
 
 </html>

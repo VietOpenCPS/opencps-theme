@@ -127,7 +127,8 @@
 		var fromViaPostalConfig = true; /*check xác nhận là hồ sơ nhận qua bưu chính*/
 		var activePdfEditor = false; /*sử dụng chức năng ghi chú trên tài liệu Pdf*/
 		var viTriLuuTru = false; /*sử dụng chức năng vị trí lưu trữ hồ sơ*/;
-		var traCuuLgspCongDan = false
+		var traCuuLgspCongDan = true;
+		var requiredEform = true
 	</script>
 	<!-- end -->
 </head>
@@ -323,17 +324,17 @@
 			event.preventDefault();
 		    $.ajaxSetup({
 		    headers: {
-		      'groupId': window.themeDisplay.getScopeGroupId(),
-		      'Token': window.Liferay.authToken
-		    }
-		  });
-		  $.get('/o/rest/v2/dvcqgsso/authurl',{state: "",redirectURL: "https://dichvucong.haugiang.gov.vn/web/cong-dich-vu-cong-tinh-hau-giang/tracuu-ho-so"})
-		  .done(function(data) {    
-		        window.location.href = data
-		  })
-		  .error(function (){
-		    alert("Chức năng đang cập nhật. Thử lại sau")
-		  })
+				'groupId': window.themeDisplay.getScopeGroupId(),
+				'Token': window.Liferay.authToken
+				}
+			});
+			$.get('/o/rest/v2/dvcqgsso/authurl',{state: "",redirectURL: "https://dichvucong.haugiang.gov.vn/web/cong-dich-vu-cong-tinh-hau-giang/tracuu-ho-so"})
+			.done(function(data) {    
+					window.location.href = data
+			})
+			.error(function (){
+				alert("Chức năng đang cập nhật. Thử lại sau")
+			})
 			// window.location.href = "/web/cong-dich-vu-cong-tinh-hau-giang/register#/login"
 		}
 		

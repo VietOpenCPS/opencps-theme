@@ -12,14 +12,14 @@
 	
 	<link rel="Shortcut Icon" href="${themeDisplay.getPathThemeRoot()}/images/favicon.ico">
 	
-	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=vietnamese" rel="stylesheet">
+	<!-- <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap&subset=vietnamese" rel="stylesheet"> -->
 	<link rel="stylesheet" href="${themeDisplay.getPathThemeRoot()}/css/font-awesome.min.css">
 
 	<@liferay_util["include"] page=top_head_include />
 	
 	<base href="/">
 	<link href="${themeDisplay.getPathThemeRoot()}/css/base-style.css?t=8283188" rel="stylesheet" type="text/css">
-	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888" rel="stylesheet" type="text/css">
+	<link href="${themeDisplay.getPathThemeRoot()}/css/main.css?t=8888123" rel="stylesheet" type="text/css">
 	
 	<script>
         window.__define = window.define;
@@ -47,7 +47,7 @@
 	_govaq.push(['enableLinkTracking']);
 	(function () {
 		_govaq.push(['setTrackerUrl', 'https://f-emc.ngsp.gov.vn/tracking']);
-		_govaq.push(['setSiteId', '163']);
+		_govaq.push(['setSiteId', '33']);
 		var d = document,
 			g = d.createElement('script'),
 			s = d.getElementsByTagName('script')[0];
@@ -99,7 +99,34 @@
 				</@>
 			</#if>
 		</section>
-
+		<!--  -->
+		<div class="hotline-phone-ring-wrap">
+			<div class="hotline-phone-ring">
+				<div class="hotline-phone-ring-circle"></div>
+				<div class="hotline-phone-ring-circle-fill"></div>
+				<div class="hotline-phone-ring-img-circle">
+					<a href="tel:1900866699" class="pps-btn-img">
+						<img src="/o/tinhdongthap-theme/images/ring-phone.png"
+							alt="Số điện thoại" width="50">
+					</a>
+				</div>
+				<a href="tel:1900866699" style="
+					width: 255px;
+					height: 31px;
+					line-height: 31px;
+					background-color: #74b920;
+					color: #fff;
+					position: absolute;
+					left: 51px;
+					top: 38px;
+					padding-left: 28px;
+					z-index: 2 !important;
+					border-bottom-right-radius: 15px;
+					border-top-right-radius: 15px;
+				"><span>Tổng đài giải đáp</span>:<span style="font-size: 16px;font-weight: 500;"> 1900.86.66.99</span></a>
+			</div>
+		</div>
+		<!--  -->
 		<footer id="footer">
 			<img src="${themeDisplay.getPathThemeRoot()}/images/lotus.png"/>
 			<!--<div class="statistics">Đang online: <span class="online">3</span> / <span class="total">122</span></div>-->
@@ -107,7 +134,7 @@
 			<p class="info">
 				<span>Địa chỉ: Số 12, đường 30/4, phường 1, thành phố Cao Lãnh, tỉnh Đồng Tháp</span>
 				<span class="hid">|</span>
-				<span>Hỗ trợ sử dụng phần mềm: 024.668.22443/02773.873.995</span>
+				<span>Hỗ trợ sử dụng phần mềm: 024.668.22443/ 02773873995/ 02773856113</span>
 				<span class="hid">|</span>
 				<span>Email: motcuadichvucong@gmail.com</span>
 			</p>
@@ -123,7 +150,7 @@
 			"data": {
 				"module": "API",
 				"method": "Live.getCounters",
-				"idSite": "6",
+				"idSite": "5",
 				"lastMinutes": "1",
 				"format": "JSON",
 				"token_auth": "1811b03abf29e86ee2532678d70b31b0"
@@ -138,7 +165,7 @@
 				} catch (error) {
 				}
 			});
-			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=6&lastMinutes=3&format=JSON&token_auth=1811b03abf29e86ee2532678d70b31b0")
+			xhr.open("GET", "https://thongke.opencps.vn/?module=API&method=Live.getCounters&idSite=5&lastMinutes=3&format=JSON&token_auth=1811b03abf29e86ee2532678d70b31b0")
 			xhr.send()
 		}
 		setTimeout(function () {
@@ -274,6 +301,192 @@
 				display: none;
 			}
 		}
+		/* hotline rings */
+		.hotline-phone-ring-wrap {
+			position: fixed;
+			bottom: 0;
+    		right: 200px;
+			z-index: 999999;
+			}
+
+			.hotline-phone-ring {
+			position: relative;
+			visibility: visible;
+			background-color: transparent;
+			width: 110px;
+			height: 100px;
+			cursor: pointer;
+			z-index: 11;
+			-webkit-backface-visibility: hidden;
+			-webkit-transform: translateZ(0);
+			transition: visibility .5s;
+			left: 0;
+			bottom: 0;
+			display: block;
+			}
+
+			.hotline-phone-ring-circle {
+				width: 87px;
+			height: 87px;
+			top: 10px;
+			left: 10px;
+			position: absolute;
+			background-color: transparent;
+			border-radius: 100%;
+			border: 2px solid #74b920;
+			-webkit-animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+			animation: phonering-alo-circle-anim 1.2s infinite ease-in-out;
+			transition: all .5s;
+			-webkit-transform-origin: 50% 50%;
+			-ms-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			opacity: 0.5;
+			}
+
+			.hotline-phone-ring-circle-fill {
+				z-index: 5;
+				width: 57px;
+			height: 57px;
+			top: 25px;
+			left: 25px;
+			position: absolute;
+			background-color: #74b920;
+			border-radius: 100%;
+			border: 2px solid transparent;
+			-webkit-animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+			animation: phonering-alo-circle-fill-anim 2.3s infinite ease-in-out;
+			transition: all .5s;
+			-webkit-transform-origin: 50% 50%;
+			-ms-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			}
+
+			.hotline-phone-ring-img-circle {
+				background-color: #74b920;
+				z-index: 6;
+				width: 33px;
+			height: 33px;
+			top: 37px;
+			left: 37px;
+			position: absolute;
+			background-size: 20px;
+			border-radius: 100%;
+			border: 2px solid transparent;
+			-webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+			animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
+			-webkit-transform-origin: 50% 50%;
+			-ms-transform-origin: 50% 50%;
+			transform-origin: 50% 50%;
+			display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			box-shadow: 0 0 5px 2px rgb(0 0 0 / 24%);
+			}
+
+			.hotline-phone-ring-img-circle .pps-btn-img {
+				display: -webkit-box;
+			display: -webkit-flex;
+			display: -ms-flexbox;
+			display: flex;
+			}
+
+			.hotline-phone-ring-img-circle .pps-btn-img img {
+				width: 20px;
+				height: 20px;
+			}
+
+			.hotline-bar {
+			position: absolute;
+			background: rgba(230, 8, 8, 0.75);
+			height: 40px;
+			width: 200px;
+			line-height: 40px;
+			border-radius: 3px;
+			padding: 0 10px;
+			background-size: 100%;
+			cursor: pointer;
+			transition: all 0.8s;
+			-webkit-transition: all 0.8s;
+			z-index: 9;
+			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.1);
+			border-radius: 50px !important;
+			/* width: 175px !important; */
+			left: 33px;
+			bottom: 37px;
+			}
+
+			.hotline-bar > a {
+			color: #fff;
+			text-decoration: none;
+			font-size: 15px;
+			font-weight: bold;
+			text-indent: 50px;
+			display: block;
+			letter-spacing: 1px;
+			line-height: 40px;
+			font-family: Arial;
+			}
+
+			.hotline-bar > a:hover,
+			.hotline-bar > a:active {
+			color: #fff;
+			}
+
+			@-webkit-keyframes phonering-alo-circle-anim {
+			0% {
+				-webkit-transform: rotate(0) scale(0.5) skew(1deg);
+				-webkit-opacity: 0.1;
+			}
+			30% {
+				-webkit-transform: rotate(0) scale(0.7) skew(1deg);
+				-webkit-opacity: 0.5;
+			}
+			100% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+				-webkit-opacity: 0.1;
+			}
+			}
+			@-webkit-keyframes phonering-alo-circle-fill-anim {
+			0% {
+				-webkit-transform: rotate(0) scale(0.7) skew(1deg);
+				opacity: 0.6;
+			}
+			50% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+				opacity: 0.6;
+			}
+			100% {
+				-webkit-transform: rotate(0) scale(0.7) skew(1deg);
+				opacity: 0.6;
+			}
+			}
+			@-webkit-keyframes phonering-alo-circle-img-anim {
+			0% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+			}
+			10% {
+				-webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+			20% {
+				-webkit-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+			30% {
+				-webkit-transform: rotate(-25deg) scale(1) skew(1deg);
+			}
+			40% {
+				-webkit-transform: rotate(25deg) scale(1) skew(1deg);
+			}
+			50% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+			}
+			100% {
+				-webkit-transform: rotate(0) scale(1) skew(1deg);
+			}
+			}
+		/*  */
 	</style>
 	
 	<script>

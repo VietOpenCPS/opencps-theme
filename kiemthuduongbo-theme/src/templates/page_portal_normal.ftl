@@ -60,7 +60,7 @@
 		var notifyConfig = false; /*lựa chọn hình thức gửi thông báo*/
 		var defaultCityCode = false; /*set cityCode mặc định ex: 87 (Đồng Tháp)*/
 		var defaultCityName = false; /*set cityName mặc định ex: 'Tỉnh Đồng Tháp' (Đồng Tháp)*/
-		var khoTaiLieuCongDan = false; /*sử dụng kho tài liệu công dân*/
+		var khoTaiLieuCongDan = true; /*sử dụng kho tài liệu công dân*/
 		var showKySoDvc = false; /*sử dụng ký số phía cổng DVC*/
 		var hasPreviewSync = false; /*in tiến trình xử lý hs*/
 		var thanhToanChuyenKhoan = true; /*sử dụng thanh toán chuyển khoản*/
@@ -91,9 +91,9 @@
         window.require = undefined;
     </script>
     
-	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/handlebars.min.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.min.js?t=9812412312"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap.min.js?t=9812412312"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/handlebars.min.js?t=9812412312"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/alpaca.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/moment-with-locales.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap-datetimepicker.min.js"></script>

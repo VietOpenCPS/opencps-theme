@@ -30,9 +30,9 @@
 	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/handlebars.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/alpaca.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/moment-with-locales.min.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/moment-with-locales.min.js?t=9831412313"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/bootstrap-datetimepicker.min.js"></script>
-	<script src="${themeDisplay.getPathThemeRoot()}/js/moment.min.js"></script>
+	<script src="${themeDisplay.getPathThemeRoot()}/js/moment.min.js?t=9831412313"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/select2-full.min.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery-comments.js"></script>
 	<script src="${themeDisplay.getPathThemeRoot()}/js/jquery.textcomplete.js"></script>
