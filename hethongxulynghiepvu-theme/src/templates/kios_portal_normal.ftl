@@ -103,7 +103,7 @@
 				<div class="text-logo"> 
 					Bộ Giao thông Vận tải
 					<br/>
-					<span>Hệ thống thông tin một cửa điện tử<!-- - ${system}--></span>
+					<span>Hệ thống dịch vụ công trực tuyến vận tải đường bộ<!-- - ${system}--></span>
 					<!--<span>Hệ thống nghiệp vụ xử lý thủ tục hành chính - ${system}</span>-->
 				</div> 
 			</a> 

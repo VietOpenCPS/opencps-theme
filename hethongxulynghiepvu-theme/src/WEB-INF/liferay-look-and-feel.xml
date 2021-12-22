@@ -63,6 +63,13 @@
 				${images-path}/color_schemes/${css-class}
 			</color-scheme-images-path>
 		</color-scheme>
+		<color-scheme id="sogtvt" name="Sở GTVT">
+			<default-cs>true</default-cs>
+			<css-class>sogtvt-theme</css-class>
+			<color-scheme-images-path>
+				${images-path}/color_schemes/${css-class}
+			</color-scheme-images-path>
+		</color-scheme>
 		<portlet-decorator id="barebone" name="Barebone">
 			<portlet-decorator-css-class>portlet-barebone</portlet-decorator-css-class>
 		</portlet-decorator>
